@@ -1,5 +1,7 @@
-from machine import Pin, I2C
+from machine import Pin, I2C, Timer
 import time
+
+button = Pin(15, Pin.IN, Pin.PULL_DOWN)
 
 class Radio:
     
@@ -170,6 +172,24 @@ class Radio:
 # initialize the FM radio
 #
 fm_radio = Radio( 100.3, 2, False )
+
+b_vol = 0
+
+tim = Timer()
+
+def tim_callback(x):
+        global b_vol
+        if(button.value() == 1):
+            b_vol = b_vol + 1 if b_vol < 15 else 0
+            fm_radio.SetVolume(b_vol)
+            fm_radio.ProgramRadio()
+
+                            
+def button_callback(x):
+        tim.init(mode=Timer.ONE_SHOT, period=10, callback =tim_callback)
+
+
+button.irq(button_callback, Pin.IRQ_RISING)
 
 while ( True ):
 
