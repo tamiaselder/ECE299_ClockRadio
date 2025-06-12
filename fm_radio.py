@@ -175,8 +175,7 @@ fm_radio = Radio( 100.3, 2, False )
 
 b_vol = 0
 
-tim = Timer()
-
+tim = Timer(1)
 def tim_callback(x):
         global b_vol
         if(button.value() == 1):

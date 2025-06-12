@@ -38,7 +38,7 @@ oled_spi = SPI( SPI_DEVICE, baudrate= 100000, sck= spi_sck, mosi= spi_sda )
 #
 oled = SSD1306_SPI( SCREEN_WIDTH, SCREEN_HEIGHT, oled_spi, spi_dc, spi_res, spi_cs, True )
 
-tim = Timer()
+tim = Timer(1)
 
 # Assign a value to a variable
 Count = 3113
