@@ -1208,6 +1208,49 @@
 			)
 		)
 	)
+	(sheet
+		(at 203.2 99.06)
+		(size 69.85 31.75)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5cfe90a0-b8d3-442a-948b-db843cef3756")
+		(property "Sheetname" "Power"
+			(at 203.2 98.3484 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 203.2 131.3946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ECE 299 Project"
+				(path "/adf646d2-aa7c-4345-9423-7107505b3b06"
+					(page "2")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

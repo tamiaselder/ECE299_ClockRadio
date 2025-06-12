@@ -229,7 +229,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -411,6 +411,10 @@
     [
       "adf646d2-aa7c-4345-9423-7107505b3b06",
       "Root"
+    ],
+    [
+      "5cfe90a0-b8d3-442a-948b-db843cef3756",
+      "Power"
     ]
   ],
   "text_variables": {}
