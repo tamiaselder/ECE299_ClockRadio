@@ -1,4 +1,4 @@
-from machine import Pin, I2C, Timer
+from machine import Pin, I2C  #, Timer
 import time
 
 button = Pin(15, Pin.IN, Pin.PULL_DOWN)
@@ -23,15 +23,15 @@ class Radio:
       
 # Initialize I/O pins associated with the radio's I2C interface
 
-        self.i2c_sda = Pin(26)
-        self.i2c_scl = Pin(27)
+        self.i2c_sda = Pin(16)
+        self.i2c_scl = Pin(17)
 
 #
 # I2C Device ID can be 0 or 1. It must match the wiring. 
 #
 # The radio is connected to device number 1 of the I2C device
 #
-        self.i2c_device = 1 
+        self.i2c_device = 0
         self.i2c_device_address = 0x10
 
 #
@@ -173,22 +173,22 @@ class Radio:
 #
 fm_radio = Radio( 100.3, 2, False )
 
-b_vol = 0
+# b_vol = 0
 
-tim = Timer(1)
-def tim_callback(x):
-        global b_vol
-        if(button.value() == 1):
-            b_vol = b_vol + 1 if b_vol < 15 else 0
-            fm_radio.SetVolume(b_vol)
-            fm_radio.ProgramRadio()
+# tim = Timer(1)
+# def tim_callback(x):
+#         global b_vol
+#         if(button.value() == 1):
+#             b_vol = b_vol + 1 if b_vol < 15 else 0
+#             fm_radio.SetVolume(b_vol)
+#             fm_radio.ProgramRadio()
 
                             
-def button_callback(x):
-        tim.init(mode=Timer.ONE_SHOT, period=10, callback =tim_callback)
+# def button_callback(x):
+#         tim.init(mode=Timer.ONE_SHOT, period=10, callback =tim_callback)
 
 
-button.irq(button_callback, Pin.IRQ_RISING)
+# button.irq(button_callback, Pin.IRQ_RISING)
 
 while ( True ):
 
