@@ -170,7 +170,7 @@ class Radio:
 
 #
 # initialize the FM radio
-#
+
 fm_radio = Radio( 100.3, 2, False )
 
 # b_vol = 0

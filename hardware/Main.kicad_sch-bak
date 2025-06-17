@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "9.0")
 	(uuid "adf646d2-aa7c-4345-9423-7107505b3b06")
-	(paper "A4")
+	(paper "A3")
 	(lib_symbols
 		(symbol "MCU_Module:RaspberryPi_Pico_W"
 			(pin_names
@@ -1567,8 +1567,8 @@
 		)
 	)
 	(sheet
-		(at 179.07 65.405)
-		(size 14.605 11.43)
+		(at 133.35 60.325)
+		(size 15.24 17.145)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1583,7 +1583,7 @@
 		)
 		(uuid "1b91a94e-3823-4ebf-b09f-64912f681b22")
 		(property "Sheetname" "Radio-Audio"
-			(at 179.07 64.6934 0)
+			(at 133.35 59.6134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1592,32 +1592,12 @@
 			)
 		)
 		(property "Sheetfile" "Radio-Audio.kicad_sch"
-			(at 179.07 77.4196 0)
+			(at 133.35 78.0546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "Radio_SDA" input
-			(at 179.07 73.66 180)
-			(uuid "0607b863-ca32-497a-b4cb-4707c55559dd")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "Radio_SCL" input
-			(at 179.07 68.58 180)
-			(uuid "0dbcdc96-68fc-4184-b7e3-31031cc86f87")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(instances
@@ -1665,8 +1645,51 @@
 		)
 		(instances
 			(project "Main"
+			(project "Main"
 				(path "/adf646d2-aa7c-4345-9423-7107505b3b06"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 144.145 99.06)
+		(size 14.605 17.145)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8c0a98c6-6804-4d2b-8567-877eb485934b")
+		(property "Sheetname" "Input"
+			(at 144.145 98.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Input.kicad_sch"
+			(at 144.145 116.7896 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Main"
+				(path "/adf646d2-aa7c-4345-9423-7107505b3b06"
+					(page "4")
 				)
 			)
 		)

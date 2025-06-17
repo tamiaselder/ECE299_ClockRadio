@@ -52,3 +52,5 @@ m4/lt~obsolete.m4
 Makefile
 
 .vscode\settings.json
+hardware/~Main.kicad_sch.lck
+hardware/#auto_saved_files#
