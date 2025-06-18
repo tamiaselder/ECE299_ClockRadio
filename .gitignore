@@ -51,6 +51,8 @@ m4/lt~obsolete.m4
 # (which is called by configure script))
 Makefile
 
-.vscode\settings.json
+.vscode/settings.json
 hardware/~Main.kicad_sch.lck
 hardware/#auto_saved_files#
+hardware/fp-lib-table
+hardware/sym-lib-table
