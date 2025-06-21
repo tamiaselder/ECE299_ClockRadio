@@ -2743,36 +2743,36 @@
 		(uuid "f88d94c2-5484-4af4-a2b7-a6623e4eaf23")
 	)
 	(no_connect
-		(at 140.97 109.22)
-		(uuid "0bd81014-c725-4914-87e7-9084f5215a1f")
-	)
-	(no_connect
-		(at 105.41 111.76)
-		(uuid "0cb9c37c-ec27-4a35-acf3-662081df4379")
+		(at 105.41 99.06)
+		(uuid "1549f52d-7f85-4762-a998-e1ce075de7bc")
 	)
 	(no_connect
 		(at 105.41 104.14)
-		(uuid "0f4ce331-d362-4f0d-bfd6-73b8fd15476f")
+		(uuid "1d6ae9c4-e799-4caa-89b0-6e829d874318")
 	)
 	(no_connect
-		(at 140.97 111.76)
-		(uuid "2d3d32e5-162f-4782-9c7d-4c00d3194e19")
+		(at 105.41 86.36)
+		(uuid "2c87e3d3-057b-4196-ab87-0a262a8b0665")
 	)
 	(no_connect
-		(at 140.97 93.98)
-		(uuid "40b9e150-f047-4d55-97f9-c13ae5bbaa1b")
+		(at 105.41 81.28)
+		(uuid "4058275e-a292-42a6-810e-64c1ac8b0855")
 	)
 	(no_connect
-		(at 105.41 99.06)
-		(uuid "4bc1f49e-ee5a-487f-b457-aac4e06b32e5")
-	)
-	(no_connect
-		(at 140.97 106.68)
-		(uuid "4e5d829f-c846-46a4-9eb3-6b20c402022a")
+		(at 105.41 93.98)
+		(uuid "4da82fec-fdda-46e0-9120-89688f472cf8")
 	)
 	(no_connect
 		(at 140.97 87.63)
 		(uuid "6d6e3191-4b26-478a-bd60-b6ea65043feb")
+	)
+	(no_connect
+		(at 105.41 91.44)
+		(uuid "74afbc12-57fe-4e0c-aaef-e6e879879d94")
+	)
+	(no_connect
+		(at 105.41 101.6)
+		(uuid "8bd4bfe4-94d0-46fe-83f2-4911b15e3456")
 	)
 	(no_connect
 		(at 140.97 85.09)
@@ -2783,8 +2783,8 @@
 		(uuid "ac04e5e8-958a-420e-bcd9-786c53f768bf")
 	)
 	(no_connect
-		(at 105.41 109.22)
-		(uuid "b782719d-e4c9-4376-a293-50486158cf64")
+		(at 105.41 83.82)
+		(uuid "bbd9575e-94cf-4abd-b97b-4b7218612d55")
 	)
 	(no_connect
 		(at 140.97 91.44)
@@ -2795,20 +2795,12 @@
 		(uuid "d7799b0f-8bb9-4664-8668-ea2995352c6d")
 	)
 	(no_connect
+		(at 105.41 96.52)
+		(uuid "db8bdba8-fe57-4215-b834-801ccb375a24")
+	)
+	(no_connect
 		(at 140.97 78.74)
 		(uuid "e05d817f-b2cc-4ef6-9edc-c05320cfc1ae")
-	)
-	(no_connect
-		(at 105.41 101.6)
-		(uuid "e849d6ff-dc8b-4304-9d29-4734da0f6c40")
-	)
-	(no_connect
-		(at 105.41 106.68)
-		(uuid "e91a8610-9b25-4489-9af5-19d592fa8464")
-	)
-	(no_connect
-		(at 140.97 96.52)
-		(uuid "fd434e4e-a8d1-4bc2-9b86-4b270afccbe5")
 	)
 	(wire
 		(pts
@@ -2902,6 +2894,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 93.98) (xy 152.4 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1625e8f8-b325-4b77-bb0f-db0349a71387")
+	)
+	(wire
+		(pts
 			(xy 54.61 121.92) (xy 54.61 115.57)
 		)
 		(stroke
@@ -2912,7 +2914,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 116.84) (xy 105.41 116.84)
+			(xy 144.78 111.76) (xy 140.97 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2922,7 +2924,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 104.14) (xy 144.78 104.14)
+			(xy 140.97 116.84) (xy 144.78 116.84)
 		)
 		(stroke
 			(width 0)
@@ -2982,16 +2984,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 116.84) (xy 149.86 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28ffd6a8-0ce0-40e3-b434-e2f577a71e7b")
-	)
-	(wire
-		(pts
 			(xy 45.72 50.8) (xy 45.72 58.42)
 		)
 		(stroke
@@ -3042,7 +3034,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 78.74) (xy 105.41 78.74)
+			(xy 144.78 104.14) (xy 140.97 104.14)
 		)
 		(stroke
 			(width 0)
@@ -3062,7 +3054,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 86.36) (xy 105.41 86.36)
+			(xy 101.6 116.84) (xy 105.41 116.84)
 		)
 		(stroke
 			(width 0)
@@ -3102,7 +3094,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 91.44) (xy 105.41 91.44)
+			(xy 101.6 111.76) (xy 105.41 111.76)
 		)
 		(stroke
 			(width 0)
@@ -3122,7 +3114,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 81.28) (xy 105.41 81.28)
+			(xy 144.78 101.6) (xy 140.97 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3172,7 +3164,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 114.3) (xy 105.41 114.3)
+			(xy 144.78 114.3) (xy 140.97 114.3)
 		)
 		(stroke
 			(width 0)
@@ -3222,7 +3214,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 96.52) (xy 105.41 96.52)
+			(xy 101.6 109.22) (xy 105.41 109.22)
 		)
 		(stroke
 			(width 0)
@@ -3282,16 +3274,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 114.3) (xy 149.86 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7103e13a-b623-4a5c-8958-35781bb82e4a")
-	)
-	(wire
-		(pts
 			(xy 45.72 149.86) (xy 45.72 151.13)
 		)
 		(stroke
@@ -3332,7 +3314,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 93.98) (xy 105.41 93.98)
+			(xy 101.6 106.68) (xy 105.41 106.68)
 		)
 		(stroke
 			(width 0)
@@ -3472,7 +3454,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 83.82) (xy 105.41 83.82)
+			(xy 101.6 114.3) (xy 105.41 114.3)
 		)
 		(stroke
 			(width 0)
@@ -3519,6 +3501,16 @@
 			(type default)
 		)
 		(uuid "b1926893-bd0e-42df-b23d-67600a6c6773")
+	)
+	(wire
+		(pts
+			(xy 140.97 96.52) (xy 152.4 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b31ac41d-8d30-4c37-a24c-33db86018920")
 	)
 	(wire
 		(pts
@@ -3732,7 +3724,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 101.6) (xy 144.78 101.6)
+			(xy 140.97 106.68) (xy 144.78 106.68)
 		)
 		(stroke
 			(width 0)
@@ -3841,12 +3833,12 @@
 		(uuid "fa71672c-dd9d-406a-873e-4343a81e982e")
 	)
 	(label "ENC1B"
-		(at 101.6 116.84 180)
+		(at 144.78 111.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "135dbc9c-8362-4d6a-a9ca-90a7d75363c0")
 	)
@@ -3871,7 +3863,7 @@
 		(uuid "22b535df-ea80-43e8-b5c1-4a2ba94a5e31")
 	)
 	(label "DISP_SDA"
-		(at 101.6 86.36 180)
+		(at 101.6 116.84 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3881,7 +3873,7 @@
 		(uuid "2b1f9f94-9e20-4a19-b8ce-8ca07be33643")
 	)
 	(label "ENC1_BTN"
-		(at 144.78 104.14 0)
+		(at 144.78 116.84 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3891,7 +3883,7 @@
 		(uuid "370a0de7-8d99-4996-9469-0c1afc7cc253")
 	)
 	(label "ENC2_BTN"
-		(at 144.78 101.6 0)
+		(at 144.78 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3921,12 +3913,12 @@
 		(uuid "918a0c3c-5df3-407d-9e00-a69ac9c172c1")
 	)
 	(label "ENC2A"
-		(at 101.6 78.74 180)
+		(at 144.78 104.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "9851ed88-3a21-4737-adf6-58f57278cc73")
 	)
@@ -3971,12 +3963,12 @@
 		(uuid "b1bb1dae-8b37-4f47-8063-c93ad1209682")
 	)
 	(label "ENC1A"
-		(at 101.6 114.3 180)
+		(at 144.78 114.3 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "ce6baaa2-a71e-4548-befa-422ab5177e6e")
 	)
@@ -4001,17 +3993,17 @@
 		(uuid "f3d1295d-1bbf-4088-818e-11f797da3e7a")
 	)
 	(label "ENC2B"
-		(at 101.6 81.28 180)
+		(at 144.78 101.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "f3fff207-415f-4f74-87bc-d3fb1c2890c3")
 	)
 	(label "DISP_RES"
-		(at 101.6 93.98 180)
+		(at 101.6 106.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4021,7 +4013,7 @@
 		(uuid "f5cd65d3-fc8c-473a-b96e-e21585a98d50")
 	)
 	(label "DISP_DC"
-		(at 101.6 96.52 180)
+		(at 101.6 109.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4031,7 +4023,7 @@
 		(uuid "f615dce5-9375-45dc-be7c-de7cbf6d9cac")
 	)
 	(label "DISP_SCLK"
-		(at 101.6 83.82 180)
+		(at 101.6 114.3 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4041,7 +4033,7 @@
 		(uuid "f7f69fb3-71a5-4494-bc80-c0aff3dacf90")
 	)
 	(label "DISP_CS"
-		(at 101.6 91.44 180)
+		(at 101.6 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6767,7 +6759,7 @@
 		)
 	)
 	(sheet
-		(at 149.86 111.125)
+		(at 152.4 90.805)
 		(size 14.605 8.89)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6783,7 +6775,7 @@
 		)
 		(uuid "1b91a94e-3823-4ebf-b09f-64912f681b22")
 		(property "Sheetname" "Radio-Audio"
-			(at 149.86 110.4134 0)
+			(at 152.4 90.0934 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6792,7 +6784,7 @@
 			)
 		)
 		(property "Sheetfile" "Radio-Audio.kicad_sch"
-			(at 149.86 120.5996 0)
+			(at 152.4 100.2796 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6801,7 +6793,7 @@
 			)
 		)
 		(pin "Radio_SDA" input
-			(at 149.86 116.84 180)
+			(at 152.4 93.98 180)
 			(uuid "0607b863-ca32-497a-b4cb-4707c55559dd")
 			(effects
 				(font
@@ -6811,7 +6803,7 @@
 			)
 		)
 		(pin "Radio_SCL" input
-			(at 149.86 114.3 180)
+			(at 152.4 96.52 180)
 			(uuid "0dbcdc96-68fc-4184-b7e3-31031cc86f87")
 			(effects
 				(font
