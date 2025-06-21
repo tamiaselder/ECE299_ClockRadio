@@ -4145,7 +4145,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 56.896 53.086 0)
 			(effects
 				(font
@@ -4154,7 +4154,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 53.594 51.816 90)
 			(effects
 				(font
@@ -4554,7 +4554,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x07_P2.00mm_Vertical"
 			(at 181.61 43.18 0)
 			(effects
 				(font
@@ -4628,7 +4628,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 62.992 134.366 90)
 			(effects
 				(font
@@ -4636,7 +4636,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 59.944 134.874 90)
 			(effects
 				(font
@@ -4760,7 +4760,7 @@
 				)
 			)
 		)
-		(property "Value" "0.01u"
+		(property "Value" "0.01uF"
 			(at 65.786 40.132 90)
 			(effects
 				(font
@@ -4768,7 +4768,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
 			(at 60.96 41.91 0)
 			(effects
 				(font
@@ -4893,7 +4893,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 63.754 150.876 90)
 			(effects
 				(font
@@ -4901,7 +4901,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 59.944 146.304 90)
 			(effects
 				(font
@@ -5408,7 +5408,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 63.246 59.69 90)
 			(effects
 				(font
@@ -5416,7 +5416,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 59.944 59.944 90)
 			(effects
 				(font
@@ -5542,7 +5542,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 56.134 83.82 0)
 			(effects
 				(font
@@ -5551,7 +5551,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 53.594 82.296 90)
 			(effects
 				(font
@@ -5761,7 +5761,7 @@
 				)
 			)
 		)
-		(property "Value" "0.01u"
+		(property "Value" "0.01uF"
 			(at 65.786 165.862 90)
 			(effects
 				(font
@@ -5769,7 +5769,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
 			(at 60.96 167.64 0)
 			(effects
 				(font
@@ -6112,7 +6112,7 @@
 				)
 			)
 		)
-		(property "Value" "0.01u"
+		(property "Value" "0.01uF"
 			(at 66.294 91.948 90)
 			(effects
 				(font
@@ -6120,7 +6120,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
 			(at 60.96 93.98 0)
 			(effects
 				(font
@@ -6179,7 +6179,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 64.262 76.962 90)
 			(effects
 				(font
@@ -6187,7 +6187,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 59.944 72.644 90)
 			(effects
 				(font
@@ -6248,7 +6248,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 57.15 126.9999 0)
 			(effects
 				(font
@@ -6257,7 +6257,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 53.594 125.476 90)
 			(effects
 				(font
@@ -6448,7 +6448,7 @@
 				)
 			)
 		)
-		(property "Value" "0.01u"
+		(property "Value" "0.01uF"
 			(at 66.04 113.792 90)
 			(effects
 				(font
@@ -6456,7 +6456,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
 			(at 60.96 115.57 0)
 			(effects
 				(font
@@ -6648,7 +6648,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "10kΩ"
 			(at 57.15 157.4799 0)
 			(effects
 				(font
@@ -6657,7 +6657,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
 			(at 53.594 155.956 90)
 			(effects
 				(font
