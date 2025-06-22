@@ -1815,7 +1815,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 113.03 60.96 0)
 			(effects
 				(font
@@ -1959,7 +1959,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 63.5 60.96 0)
 			(effects
 				(font

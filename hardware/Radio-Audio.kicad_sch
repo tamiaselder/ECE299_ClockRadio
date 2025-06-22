@@ -2403,7 +2403,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 170.18 81.28 0)
 			(effects
 				(font
@@ -2473,7 +2473,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 187.706 117.094 90)
 			(effects
 				(font
@@ -2748,7 +2748,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 186.69 107.95 0)
 			(effects
 				(font
@@ -3017,7 +3017,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 145.796 100.584 90)
 			(effects
 				(font
@@ -3221,7 +3221,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 75.184 78.486 90)
 			(effects
 				(font
@@ -3489,7 +3489,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 67.056 78.994 90)
 			(effects
 				(font
@@ -3689,7 +3689,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ECE:RDA5807M_Module_TH"
+		(property "Footprint" "ECE:RDA5807M_Module_SM"
 			(at 92.71 96.52 0)
 			(effects
 				(font
@@ -3781,7 +3781,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 138.43 93.98 0)
 			(effects
 				(font
