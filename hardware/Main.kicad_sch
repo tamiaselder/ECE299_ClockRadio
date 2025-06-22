@@ -2743,6 +2743,10 @@
 		(uuid "f88d94c2-5484-4af4-a2b7-a6623e4eaf23")
 	)
 	(no_connect
+		(at 105.41 78.74)
+		(uuid "0d161b48-162a-487e-b037-5d1692388b0c")
+	)
+	(no_connect
 		(at 105.41 99.06)
 		(uuid "1549f52d-7f85-4762-a998-e1ce075de7bc")
 	)
@@ -2756,7 +2760,7 @@
 	)
 	(no_connect
 		(at 105.41 81.28)
-		(uuid "4058275e-a292-42a6-810e-64c1ac8b0855")
+		(uuid "498d849d-b562-43f9-b42a-4d10e6c7ed42")
 	)
 	(no_connect
 		(at 105.41 93.98)
@@ -2785,10 +2789,6 @@
 	(no_connect
 		(at 105.41 83.82)
 		(uuid "bbd9575e-94cf-4abd-b97b-4b7218612d55")
-	)
-	(no_connect
-		(at 140.97 91.44)
-		(uuid "bdcb28df-6fa3-4e20-a7e3-8d15e2e0c2c6")
 	)
 	(no_connect
 		(at 140.97 81.28)
@@ -3821,6 +3821,16 @@
 			(type default)
 		)
 		(uuid "f76c9302-fe81-44cf-a113-a846b03bff3c")
+	)
+	(wire
+		(pts
+			(xy 140.97 91.44) (xy 152.4 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f93c017f-7919-45ba-b9fe-cff8e8ffa458")
 	)
 	(wire
 		(pts
@@ -5943,7 +5953,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "aa360c21-13fb-4ddd-a391-7aef98915786")
 		(property "Reference" "#FLG01"
 			(at 121.285 69.85 0)
@@ -5955,12 +5964,13 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 119.38 69.8499 90)
+			(at 115.316 70.104 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -6759,8 +6769,8 @@
 		)
 	)
 	(sheet
-		(at 152.4 90.805)
-		(size 14.605 8.89)
+		(at 152.4 88.9)
+		(size 14.605 10.16)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -6775,7 +6785,7 @@
 		)
 		(uuid "1b91a94e-3823-4ebf-b09f-64912f681b22")
 		(property "Sheetname" "Radio-Audio"
-			(at 152.4 90.0934 0)
+			(at 152.4 88.1884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6784,7 +6794,7 @@
 			)
 		)
 		(property "Sheetfile" "Radio-Audio.kicad_sch"
-			(at 152.4 100.2796 0)
+			(at 152.4 99.6446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6805,6 +6815,16 @@
 		(pin "Radio_SCL" input
 			(at 152.4 96.52 180)
 			(uuid "0dbcdc96-68fc-4184-b7e3-31031cc86f87")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PWM Audio" input
+			(at 152.4 91.44 180)
+			(uuid "391a674b-346a-49dc-90c3-9d827bbec6b7")
 			(effects
 				(font
 					(size 1.27 1.27)
