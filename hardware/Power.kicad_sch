@@ -1603,7 +1603,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.8-6V"
+		(property "Value" "4 AA"
 			(at 40.132 61.214 0)
 			(effects
 				(font
@@ -1613,7 +1613,7 @@
 			)
 		)
 		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
-			(at 50.8 58.166 90)
+			(at 25.654 56.134 90)
 			(effects
 				(font
 					(size 1.27 1.27)

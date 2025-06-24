@@ -1921,6 +1921,18 @@
 		(uuid "12484eaa-266d-4c06-a752-916252c83d01")
 	)
 	(junction
+		(at 113.03 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2272dc28-4e15-4616-8477-c568f8dd9adb")
+	)
+	(junction
+		(at 144.78 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5240e486-f0b5-4ffe-9118-56836505bd06")
+	)
+	(junction
 		(at 121.92 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1931,12 +1943,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6a6b9690-407f-4d89-b79e-3e95d5eb0fc9")
-	)
-	(junction
-		(at 144.78 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "890f4e32-0c0a-4b58-87df-b16a4f6ff5d9")
 	)
 	(junction
 		(at 66.04 92.71)
@@ -1972,7 +1978,7 @@
 		(at 152.4 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cc42779d-ba65-4ab2-8d14-ccffec15ce40")
+		(uuid "d69b9f96-ff93-43fa-a764-bf8106d7670c")
 	)
 	(no_connect
 		(at 166.37 88.9)
@@ -2052,6 +2058,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 80.01) (xy 120.65 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a40c008-60d9-405f-a802-753e9c6536b6")
+	)
+	(wire
+		(pts
 			(xy 152.4 80.01) (xy 152.4 93.98)
 		)
 		(stroke
@@ -2072,16 +2088,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 93.98) (xy 152.4 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2da4f588-9ac0-43f6-a1ef-27d758bc2662")
-	)
-	(wire
-		(pts
 			(xy 105.41 107.95) (xy 110.49 107.95)
 		)
 		(stroke
@@ -2099,6 +2105,16 @@
 			(type default)
 		)
 		(uuid "331bbe4c-c96b-4c82-b039-e88334da513a")
+	)
+	(wire
+		(pts
+			(xy 121.92 81.28) (xy 121.92 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a1f50c3-f960-4bb7-b9e0-befdade33811")
 	)
 	(wire
 		(pts
@@ -2539,6 +2555,16 @@
 			(type default)
 		)
 		(uuid "ff8bb1e6-5453-4352-ab9f-43e174e086d5")
+	)
+	(label "Board Antenna"
+		(at 121.92 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9e674e7d-e4db-4f28-b3ce-75cb56f5fa16")
 	)
 	(hierarchical_label "Radio_SDA"
 		(shape input)
@@ -3118,6 +3144,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_US")
+		(at 116.84 80.01 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d638685-f4ea-4506-ae92-69bb2ccc3b51")
+		(property "Reference" "R18"
+			(at 118.364 84.582 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0 ohm"
+			(at 118.11 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
+			(at 117.094 78.994 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 116.84 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "08b5f6ab-8bda-405d-834b-814ddd965ab2")
+		)
+		(pin "2"
+			(uuid "56c6934a-54ea-4047-9def-f53a9303613e")
+		)
+		(instances
+			(project ""
+				(path "/adf646d2-aa7c-4345-9423-7107505b3b06/1b91a94e-3823-4ebf-b09f-64912f681b22"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_US")
 		(at 186.69 107.95 0)
 		(unit 1)
@@ -3677,6 +3770,74 @@
 			(project "Main"
 				(path "/adf646d2-aa7c-4345-9423-7107505b3b06/1b91a94e-3823-4ebf-b09f-64912f681b22"
 					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 148.59 93.98 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "866a1c4e-8a20-4d85-b4c3-94d524ac169f")
+		(property "Reference" "R17"
+			(at 148.59 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0 ohm"
+			(at 148.59 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
+			(at 148.844 92.964 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 148.59 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 148.59 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c374d4e6-44ea-456f-ae7b-260a1e056604")
+		)
+		(pin "2"
+			(uuid "7acee5b0-fc87-47b8-8708-f9aaab50963d")
+		)
+		(instances
+			(project ""
+				(path "/adf646d2-aa7c-4345-9423-7107505b3b06/1b91a94e-3823-4ebf-b09f-64912f681b22"
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -4725,7 +4886,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical"
+		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
 			(at 223.52 101.6 0)
 			(effects
 				(font
