@@ -1,40 +1,51 @@
-Info: Processing symbol 'R12:Resistor_SMD:R_1812_4532Metric'.
+Info: Processing symbol 'R16:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R6:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R7:Resistor_SMD:R_1206_3216Metric'.
 Info: Processing symbol 'AE1:Connector_PinHeader_2.00mm:PinHeader_1x01_P2.00mm_Vertical'.
-Info: Processing symbol 'R4:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R5:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R6:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R7:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R8:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R9:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R10:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R11:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'R3:Resistor_SMD:R_1812_4532Metric'.
+Info: Processing symbol 'R9:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R10:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R11:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R12:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R13:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R14:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R15:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R8:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R17:Resistor_SMD:R_1206_3216Metric'.
 Info: Processing symbol 'RV1:Potentiometer_SMD:Potentiometer_Bourns_3314J_Vertical'.
+Info: Processing symbol 'RV2:Potentiometer_SMD:Potentiometer_Bourns_3314J_Vertical'.
 Info: Processing symbol 'SW1:Rotary_Encoder:RotaryEncoder_Alps_EC12E-Switch_Vertical_H20mm'.
 Info: Processing symbol 'SW2:Rotary_Encoder:RotaryEncoder_Alps_EC12E-Switch_Vertical_H20mm'.
 Info: Processing symbol 'U1:Package_DIP:DIP-8_W7.62mm_Socket'.
-Info: Processing symbol 'U2:ECE:RDA5807M_Module_TH'.
+Info: Processing symbol 'U2:ECE:RDA5807M_Module_SM'.
 Info: Processing symbol 'U3:ECE:RPi_Pico_TH'.
 Info: Processing symbol 'U4:Package_TO_SOT_SMD:SOT-23-3'.
 Info: Total warnings: 0, errors: 0.
-Info: Processing symbol 'C5:Capacitor_SMD:C_1812_4532Metric'.
+Info: Processing symbol 'C7:Capacitor_SMD:C_1206_3216Metric'.
 Info: Processing symbol 'BT1:TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm'.
 Info: Processing symbol 'C1:Capacitor_Tantalum_SMD:CP_EIA-7343-30_AVX-N'.
-Info: Processing symbol 'C2:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'C3:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'C4:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'R2:Resistor_SMD:R_1812_4532Metric'.
-Info: Processing symbol 'C6:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'C7:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'C8:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'C9:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'C10:Capacitor_SMD:C_1812_4532Metric'.
-Info: Processing symbol 'DISP1:Connector_PinHeader_2.00mm:PinHeader_1x07_P2.00mm_Vertical'.
-Info: Processing symbol 'LS1:Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical'.
+Info: Processing symbol 'C2:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'C3:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'C4:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'C5:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'C6:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'R5:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'C8:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'C9:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'R2:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R4:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'R3:Resistor_SMD:R_1206_3216Metric'.
+Info: Processing symbol 'C10:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'R1:Resistor_SMD:R_1206_3216Metric'.
 Info: Processing symbol 'Q1:Package_TO_SOT_SMD:SOT-23'.
-Info: Processing symbol 'R1:Resistor_SMD:R_1812_4532Metric'.
-Updated C1 fields.
-Changed C1 footprint from 'Capacitor_SMD:CP_Elec_8x10' to 'Capacitor_Tantalum_SMD:CP_EIA-7343-30_AVX-N'.
+Info: Processing symbol 'LS1:Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical'.
+Info: Processing symbol 'DISP1:Connector_PinHeader_2.00mm:PinHeader_1x07_P2.00mm_Vertical'.
+Info: Processing symbol 'C13:Capacitor_Tantalum_SMD:CP_EIA-7343-30_AVX-N'.
+Info: Processing symbol 'C12:Capacitor_SMD:C_1206_3216Metric'.
+Info: Processing symbol 'C11:Capacitor_SMD:C_1206_3216Metric'.
+Reconnected U3 pin 22 from /ENC1A to /ENC1B.
+Reconnected U3 pin 24 from /ENC1B to /ENC1A.
+Reconnected U3 pin 29 from /ENC2B to /ENC2_BTN.
+Reconnected U3 pin 26 from /ENC2_BTN to /ENC2B.
 
 
 

@@ -2894,7 +2894,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 93.98) (xy 152.4 93.98)
+			(xy 140.97 93.98) (xy 154.94 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2914,7 +2914,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 111.76) (xy 140.97 111.76)
+			(xy 144.78 114.3) (xy 140.97 114.3)
 		)
 		(stroke
 			(width 0)
@@ -3114,7 +3114,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 101.6) (xy 140.97 101.6)
+			(xy 144.78 106.68) (xy 140.97 106.68)
 		)
 		(stroke
 			(width 0)
@@ -3164,7 +3164,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 114.3) (xy 140.97 114.3)
+			(xy 144.78 111.76) (xy 140.97 111.76)
 		)
 		(stroke
 			(width 0)
@@ -3504,7 +3504,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 96.52) (xy 152.4 96.52)
+			(xy 140.97 96.52) (xy 154.94 96.52)
 		)
 		(stroke
 			(width 0)
@@ -3724,7 +3724,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 106.68) (xy 144.78 106.68)
+			(xy 140.97 101.6) (xy 144.78 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3824,7 +3824,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 91.44) (xy 152.4 91.44)
+			(xy 140.97 91.44) (xy 154.94 91.44)
 		)
 		(stroke
 			(width 0)
@@ -3843,7 +3843,7 @@
 		(uuid "fa71672c-dd9d-406a-873e-4343a81e982e")
 	)
 	(label "ENC1B"
-		(at 144.78 111.76 0)
+		(at 144.78 114.3 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3893,7 +3893,7 @@
 		(uuid "370a0de7-8d99-4996-9469-0c1afc7cc253")
 	)
 	(label "ENC2_BTN"
-		(at 144.78 106.68 0)
+		(at 144.78 101.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3973,7 +3973,7 @@
 		(uuid "b1bb1dae-8b37-4f47-8063-c93ad1209682")
 	)
 	(label "ENC1A"
-		(at 144.78 114.3 0)
+		(at 144.78 111.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4003,7 +4003,7 @@
 		(uuid "f3d1295d-1bbf-4088-818e-11f797da3e7a")
 	)
 	(label "ENC2B"
-		(at 144.78 101.6 0)
+		(at 144.78 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6769,7 +6769,7 @@
 		)
 	)
 	(sheet
-		(at 152.4 88.9)
+		(at 154.94 88.9)
 		(size 14.605 10.16)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6785,7 +6785,7 @@
 		)
 		(uuid "1b91a94e-3823-4ebf-b09f-64912f681b22")
 		(property "Sheetname" "Radio-Audio"
-			(at 152.4 88.1884 0)
+			(at 154.94 88.1884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6794,7 +6794,7 @@
 			)
 		)
 		(property "Sheetfile" "Radio-Audio.kicad_sch"
-			(at 152.4 99.6446 0)
+			(at 154.94 99.6446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6803,7 +6803,7 @@
 			)
 		)
 		(pin "Radio_SDA" input
-			(at 152.4 93.98 180)
+			(at 154.94 93.98 180)
 			(uuid "0607b863-ca32-497a-b4cb-4707c55559dd")
 			(effects
 				(font
@@ -6813,7 +6813,7 @@
 			)
 		)
 		(pin "Radio_SCL" input
-			(at 152.4 96.52 180)
+			(at 154.94 96.52 180)
 			(uuid "0dbcdc96-68fc-4184-b7e3-31031cc86f87")
 			(effects
 				(font
@@ -6823,7 +6823,7 @@
 			)
 		)
 		(pin "PWM Audio" input
-			(at 152.4 91.44 180)
+			(at 154.94 91.44 180)
 			(uuid "391a674b-346a-49dc-90c3-9d827bbec6b7")
 			(effects
 				(font
