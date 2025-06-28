@@ -1,4 +1,18 @@
-25601076451429649
+124028667904594
+3PDT_Switch
+CUI_MJ-63022B
+
+
+0
+3
+3
+3PDT_Switch
+SW_FS57003PLT2B2M2QE
+
+
+0
+9
+9
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -59156,6 +59170,125 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+ECE
+ARD_UNO
+
+
+0
+32
+32
+ECE
+BNC_BLK_SLD
+
+Mounting Hole
+0
+2
+2
+ECE
+Bourns_PTV09_Horiz
+Pot
+R
+0
+5
+5
+ECE
+CUE_CMA-4544PF-W
+CMA-4544PF-W
+M
+0
+2
+2
+ECE
+CUE_SJ1-352XNG
+8 pins DIL package, elliptical pads
+3.5mm Jack
+0
+5
+5
+ECE
+IND_TDK_SL1923
+0.4" Resistance
+R
+0
+2
+2
+ECE
+LTC-4727JR
+
+
+0
+14
+14
+ECE
+Multicomp_2144
+Multicomp (also SPC) 2144 Power Entry Connector, IEC 320
+
+0
+5
+5
+ECE
+OLED_Display_1.3
+
+
+0
+7
+7
+ECE
+OLED_Display_2.42_copy
+
+
+0
+7
+7
+ECE
+RDA5807M_Module_SM
+
+
+0
+10
+10
+ECE
+RDA5807M_Module_TH
+
+
+0
+10
+10
+ECE
+RPi_Pico_SM
+
+
+0
+43
+43
+ECE
+RPi_Pico_TH
+
+
+0
+40
+40
+ECE
+STM32_F4
+STM32 F4 Discovery Header
+STM32F4 Discovery
+0
+104
+104
+ECE
+Transformer_Block_AVB_03526
+https://www.block.eu/en_EN/productversion/avb-03526/
+Block PCB Transformer
+0
+8
+8
+FM_PCB_ANTENNA
+FM_PCB_ANTENNA
+
+
+0
+0
+0
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -93743,27 +93876,6 @@ rotary encoder illuminated switch vertical
 0
 9
 8
-SOT-23-3_ABL
-SOT-23-3_ABL
-
-S-1206B50-M3T1U 
-0
-3
-3
-SOT-23-3_ABL
-SOT-23-3_ABL-L
-
-S-1206B50-M3T1U 
-0
-3
-3
-SOT-23-3_ABL
-SOT-23-3_ABL-M
-
-S-1206B50-M3T1U 
-0
-3
-3
 Sensor
 ASAIR_AM2302_P2.54mm_Lead2.75mm_TabDown
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/AM2302.pdf
@@ -94415,6 +94527,377 @@ https://www.farnell.com/cad/316865.pdf?_ga=2.37208032.177107060.1530611323-24901
 0
 48
 48
+SparkFun-Board
+ProMicroC
+
+SparkFun
+0
+24
+24
+SparkFun-Board
+Qwiic_1U
+
+SparkFun Qwiic 1 inch Outline
+0
+0
+0
+SparkFun-Board
+RedBoard
+
+
+0
+32
+30
+SparkFun-Board
+ThingPlus
+
+SparkFun
+0
+28
+28
+SparkFun-Board
+ThingPlus_With_Connectors
+
+SparkFun
+0
+28
+28
+SparkFun-Board
+Uno_R3_Shield_NoLabels
+Arduino Uno-Compatible Footprint No holes, no ICSP connections, no silk labels
+SparkFun Uno shield
+0
+32
+28
+SparkFun-Hardware
+Nut_4-40
+
+SparkFun 440 Nut
+0
+0
+0
+SparkFun-Hardware
+Nut_M3
+
+SparkFun
+0
+0
+0
+SparkFun-Hardware
+Screw_4-40
+
+SparkFun 440 Screw
+0
+0
+0
+SparkFun-Hardware
+Screw_M3
+
+SparkFun Metric Screw
+0
+0
+0
+SparkFun-Hardware
+Standoff
+
+SparkFun
+0
+0
+0
+SparkFun-Hardware
+Standoff_Hole-2.75mm_Clearance-1.625mm
+Standoff; hole dia. 2.75mm; clearance 1.625mm; overall clearance dia. 6.0mm; as used on Raspberry Pi pHAT
+SparkFun stand off Raspberry Pi RPi HAT
+0
+0
+0
+SparkFun-Hardware
+Standoff_Reflow-M2.0
+SMD Reflow Compatible Standoff M2x0.4
+SparkFun
+0
+1
+1
+SparkFun-Hardware
+Standoff_Reflow-M2.5
+
+SparkFun
+0
+1
+1
+SparkFun-Hardware
+Standoff_Reflow-M3.0
+SMD Reflow Compatible Standoff M3x0.5
+SparkFun
+0
+1
+1
+SparkFun-Hardware
+Standoff_Tight
+
+SparkFun
+0
+0
+0
+SparkFun-Sensor
+BMV080_Outline
+
+
+0
+0
+0
+SparkFun-Sensor
+LG-MLGA-14-1_Z8B00206105
+
+SparkFun
+0
+14
+14
+SparkFun-Sensor
+MQ-4 Gas Sensor
+<h3>Gas Sensors - MQ-3, MQ-4, MQ-6, MQ-7, MQ-8</h3>{return}<p>Footprint is orientation agnostic.</p>{return}<p><a href="https://cdn.sparkfun.com/datasheets/Sensors/Biometric/MQ-3%20ver1.3%20-%20Manual.pdf">Datasheet</a></p>{return}<p>Specifications:{return}<ul>{return}<li>Pin Count: 6</li>{return}<li>Diameter: 14.5 mm</li>{return}</ul>{return}<p>Devices Using:</p>{return}<ul>{return}<li>GAS_SENSOR</li>{return}</ul>
+SparkFun
+0
+6
+6
+SparkFun-Sensor
+MQ-7 Gas Sensor
+<h3>Gas Sensors - MQ-3, MQ-4, MQ-6, MQ-7, MQ-8</h3>{return}<p>Footprint is orientation agnostic.</p>{return}<p><a href="https://cdn.sparkfun.com/datasheets/Sensors/Biometric/MQ-3%20ver1.3%20-%20Manual.pdf">Datasheet</a></p>{return}<p>Specifications:{return}<ul>{return}<li>Pin Count: 6</li>{return}<li>Diameter: 14.5 mm</li>{return}</ul>{return}<p>Devices Using:</p>{return}<ul>{return}<li>GAS_SENSOR</li>{return}</ul>
+SparkFun
+0
+6
+6
+SparkFun-Sensor
+SCD4X
+
+SparkFun
+0
+21
+21
+SparkFun-Sensor
+SEN5x_Outline
+
+SparkFun
+0
+0
+0
+SparkFun-Sensor
+SHTC3
+
+Digital, Humidity, Temperature, Sensor
+0
+5
+5
+SparkFun-Sensor
+SPH0641LM4H-1_MICROPHONE
+PDM microphone Knowles
+SparkFun
+0
+5
+5
+SparkFun-Sensor
+STC31
+
+CO2, Sensor
+0
+13
+13
+SparkFun-Sensor
+ST_LGA-14L_2.5x3.0mm_P0.5mm_4x3
+https://www.st.com/resource/en/datasheet/lsm6dsox.pdf
+SparkFun
+0
+14
+14
+SparkFun-Sensor
+ST_LGA-16_3x3mm_P0.5mm_5x3
+ST 16-Pin Land Grid Array (LGA) (3 x 3 mm)
+SparkFun
+0
+16
+16
+SparkFun-Sensor
+VEML7700-TT
+
+SparkFun light sensor
+0
+4
+4
+SparkFun-Switch
+Joystick_PTH
+A joystick very similar to the ‘analog’ joysticks on game controllers.
+SparkFun directional joystick with select switch
+0
+14
+11
+SparkFun-Switch
+Navigation_Right_Angle
+
+SparkFun Horizontal Navigation Switch Select
+0
+5
+5
+SparkFun-Switch
+Navigation_SMD_7.5x7.5mm
+http://www.sparkfun.com/datasheets/Components/Buttons/SF303GJ26-3.pdf
+SparkFun D-Pad Navigation Switch with Post Multi-Directional 5-way
+0
+8
+8
+SparkFun-Switch
+Navigation_SMD_9.9x9.9mm
+https://cdn.sparkfun.com/assets/4/3/6/1/d/Korean-Hroparts-Elec-K1-1210UN-01.pdf
+SparkFun D-Pad Navigation Switch Multi-Directional 5-way
+0
+10
+10
+SparkFun-Switch
+Pad-CapacitiveTouch
+<h3>Conductive Button</h3>{return}<p>Used with rubber key pads on the <a href="https://www.sparkfun.com/products/retired/8602">Nordic Key FOB</a>. This one was designed and proven to work with the <a href="https://www.sparkfun.com/products/retired/9377">PolyCase Key FOB enclosures</a>.</p>
+SparkFun
+0
+1
+1
+SparkFun-Switch
+Push_PTH_12x12mm
+https://www.omron.com/ecb/products/pdf/en-b3f.pdf
+SparkFun
+0
+4
+2
+SparkFun-Switch
+Push_PTH_12x12mm_LED_Red
+https://www.sparkfun.com/datasheets/Components/General/TSD1265.png
+SparkFun Momentary Switch (Pushbutton) Illuminated
+0
+6
+4
+SparkFun-Switch
+Push_PTH_RA_7.4x4.3mm
+http://cdn.sparkfun.com/datasheets/Components/Switches/SW016.JPG
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+4
+SparkFun-Switch
+Push_PTH_RA_8-020_h7.5mm
+
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+4
+SparkFun-Switch
+Push_SMD_4.2x3.2mm
+https://www.ckswitches.com/media/3130/ck_rk_datasheet.pdf
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+2
+SparkFun-Switch
+Push_SMD_4.6x2.8mm_h1.9mm
+
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+2
+SparkFun-Switch
+Push_SMD_4.6x2.8mm_h2.5mm
+
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+2
+SparkFun-Switch
+Push_SMD_5.2x5.2mm_h1.9mm
+https://www.sparkfun.com/datasheets/Components/Buttons/SMD-Button.pdf
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+2
+SparkFun-Switch
+Push_SMD_5.2x5.2mm_h2.5mm
+https://www.sparkfun.com/datasheets/Components/Buttons/SMD-Button.pdf
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+2
+SparkFun-Switch
+Push_SMD_6.2x6.2mm
+https://www.we-online.com/components/products/datasheet/4301x2xxx8x6.pdf
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+2
+SparkFun-Switch
+Push_SMD_6x3.5mm
+https://www.sparkfun.com/datasheets/Components/1101.pdf
+SparkFun Momentary Switch (Pushbutton)
+0
+2
+2
+SparkFun-Switch
+Push_SMD_12x12mm
+https://cdn.sparkfun.com/datasheets/Components/Switches/N301102.pdf
+SparkFun Momentary Switch (Pushbutton)
+0
+4
+2
+SparkFun-Switch
+Push_SMD_RA_4.5x3.4mm
+Momentary Switch (Pushbutton)
+SparkFun
+0
+7
+3
+SparkFun-Switch
+Push_SMD_RA_5x3mm
+Momentary Switch (Pushbutton)
+SparkFun
+0
+2
+2
+SparkFun-Switch
+Slide_DP3T_SMD_9.8x3.5mm
+https://www.ckswitches.com/media/1431/ayz.pdf
+SparkFun Slide Switch
+0
+8
+8
+SparkFun-Switch
+Slide_DPDT_SMD_7.2x3.5mm
+https://www.sparkfun.com/datasheets/Components/SW_slide_ayz.pdf
+SparkFun
+0
+6
+6
+SparkFun-Switch
+Slide_DPDT_SMD_9.0x3.6mm
+https://www.ckswitches.com/media/1422/js.pdf
+SparkFun
+0
+6
+6
+SparkFun-Switch
+Slide_SP3T_SMD_9.7x2.6mm
+http://www.nidec-copal-electronics.com/e/catalog/switch/cus.pdf
+SparkFun
+0
+8
+8
+SparkFun-Switch
+Slide_SPDT_PTH_11.6x4.0mm
+https://www.sparkfun.com/datasheets/Components/Buttons/P040040c.pdf
+SparkFun
+0
+3
+3
+SparkFun-Switch
+Slide_SPST_SMD_6.7x2.6mm
+http://cdn.sparkfun.com/datasheets/Components/Switches/SLIDE.pdf
+SparkFun
+0
+7
+7
 Symbol
 CE-Logo_8.5x6mm_SilkScreen
 CE marking
