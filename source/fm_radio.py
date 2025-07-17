@@ -23,8 +23,8 @@ class Radio:
       
 # Initialize I/O pins associated with the radio's I2C interface
 
-        self.i2c_sda = Pin(16)
-        self.i2c_scl = Pin(17)
+        self.i2c_sda = Pin(8)
+        self.i2c_scl = Pin(9)
 
 #
 # I2C Device ID can be 0 or 1. It must match the wiring. 
@@ -171,7 +171,7 @@ class Radio:
 #
 # initialize the FM radio
 
-fm_radio = Radio( 100.3, 2, False )
+fm_radio = Radio( 100.3, 0, False )
 
 # b_vol = 0
 

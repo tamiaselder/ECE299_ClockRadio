@@ -33,14 +33,52 @@ def encoderB_callback(pin):
 
 
 
-encoder_A = Pin(19, Pin.IN)
-encoder_B = Pin(18, Pin.IN)
+encoder_A = Pin(18, Pin.IN)
+encoder_B = Pin(17, Pin.IN)
 
-encoder_A.irq(encoderA_callback, Pin.IRQ_FALLING | Pin.IRQ_RISING)
-encoder_B.irq(encoderB_callback, Pin.IRQ_FALLING | Pin.IRQ_RISING)
+encoder_A.irq(encoderA_callback, Pin.IRQ_FALLING|Pin.IRQ_RISING)
+encoder_B.irq(encoderB_callback, Pin.IRQ_FALLING|Pin.IRQ_RISING)
 
 timA = Timer()
 timB = Timer()
+
+# class Encoder():
+#     def __init__(self, pin_a, pin_b):
+#         self._encoder_A = Pin(pin_a, Pin.IN)
+#         self._encoder_B = Pin(pin_b, Pin.IN)
+
+#         self._encoder_A.irq(self._encoder_a_callback, Pin.IRQ_RISING)
+#         self._encoder_B.irq(self._encoder_b_callback, Pin.IRQ_RISING)
+
+#         self._a_state = [0, 0, 0]
+#         self._b_state = [0, 0, 0]
+
+#         self._current_update_value = 0
+#         self._update_value_limit = 30
+
+#     def _encoder_a_callback(self, pin):
+#         state = pin.irq().flags()
+#         self._a_state[2] = 1 
+#         if(state == self._b_state[0] and self._a_state[0] == self._b_state[1] and self._b_state[2]):
+#             self._current_update_value = self._current_update_value + 1 if self._current_update_value < self._update_value_limit else 0
+#             print(self._current_update_value)
+#             self._b_state[2] = 0
+#             self._a_state[2] = 0
+#         self._a_state[1] = self._a_state[0]
+#         self._a_state[0] = state
+    
+#     def _encoder_b_callback(self, pin):
+#         state = pin.irq().flags()
+#         self._b_state[2] = 1
+#         if(state == self._a_state[0] and self._b_state[0] == self._a_state[1] and self._a_state[2]):
+#             self._current_update_value = self._current_update_value - 1 if self._current_update_value > 0 else self._update_value_limit
+#             print(self._current_update_value)
+#             self._a_state[2] = 0
+#             self._b_state[2] = 0
+#         self._b_state[1] = self._b_state[0]
+#         self._b_state[0] = state
+
+# encoder = Encoder(19,18)
 
 while True:
     pass
