@@ -57,3 +57,7 @@ hardware/#auto_saved_files#
 hardware/fp-lib-table
 hardware/sym-lib-table
 hardware\Main-backups
+hardware/Main-backups/Main-2025-07-18_112617.zip
+hardware/Main.kicad_prl
+hardware/~Main.kicad_pcb.lck
+source/basicdisplay.py
