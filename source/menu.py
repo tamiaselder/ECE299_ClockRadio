@@ -1,25 +1,189 @@
 from fm_radio import Radio
-from datetime import datetime as dt
-from enum import Enum
+from rotary import Encoder
+from machine import RTC, Pin, Timer
 
-class clockSettings(Enum):
-    TIME = 0
-    TIME_FORTMAT = 1
-    ALARM_TIME = 2
+class ClockSettings:
+    TIME_HOUR = 0
+    TIME_MIN = 1
+    TIME_FORMAT = 2
+    ALARM_HOUR = 3
+    ALARM_MIN = 4
+    ALARM_SET = 5
+
+class Screens:
+    STANDBY = 0
+    TIME_MENU = 1
+    RADIO_MENU = 2
+
 
 class Menu():
-    def __init__(self, radio: Radio):
+    def __init__(self, radio: Radio, vol_encoder: Encoder, selection_endcoder: Encoder, selection_button: Pin, reset_button: Pin):
         self.radio = radio
 
-        self.menu_options = [
-            'Radio',
-            'Clock',
-        ]
+        self._current_screen = Screens.STANDBY
+        self._current_option = 0
 
-        self.clock_setting = [
-            '',
-            'Time',
-        ]
+        self._in_screen = False
+        self._in_option = False
 
-        self.current_option = 0
+        self._rtc = RTC()
+
+        self._alarm_time = [0, 0]
+        self._alarm_triggered = False
+        self._alarm_set = False
+
+        self._time_format_24 = True
+
+        self._vol_encoder = vol_encoder
+        self._selection_encoder = selection_endcoder
+
+        self._selection_button = selection_button
+        self._reset_button = reset_button
+
+        self._selection_button_timer = Timer()
+        self._reset_button_timer = Timer()
+        self._snooze_timer = Timer()
+
+        self._vol_encoder.set_update_val(self.radio.GetSettings()[2], 15)
+        self._selection_encoder.set_update_val(0, 2)
+
+        self._selection_button.irq(self._selection_button_callback(), Pin.IRQ_RISING)
+        self._reset_button.irq(self._reset_button_callback(), Pin.IRQ_RISING)
         
+        self._previous_value = 0
+
+
+
+    def update(self):
+        # vol = self._vol_encoder.value()
+        # if(vol == 0):
+        #     self.radio.SetMute(True)
+        #     self.radio.SetMute(True)
+        # else:
+        #     self.radio.SetMute(False)
+        #     self.radio.SetVolume(vol)
+        #     self.radio.UpdateSettings
+        
+        value = self._selection_encoder.value()
+
+        if(not self._in_screen):
+            self._current_screen = value
+
+        if(self._in_screen and not self._in_option):
+            if(self._current_screen == Screens.TIME_MENU):
+                self._current_option = value
+            elif(self._current_screen == Screens.RADIO_MENU):
+                pass
+            elif(self._current_screen == Screens.STANDBY):
+                pass
+        
+        if(self._in_option):
+            if(self._current_option == ClockSettings.TIME_HOUR):
+                time = self.get_time()
+                date = self.get_date()
+                self._rtc.datetime([date[0], date[1], date[2], date[3], value, time[1], time[2], time[3]])
+            elif(self._current_option == ClockSettings.TIME_MIN):
+                time = self.get_time()
+                date = self.get_date()
+                self._rtc.datetime([date[0], date[1], date[2], date[3], time[0], value, time[2], time[3]])
+            elif(self._current_option == ClockSettings.TIME_FORMAT):
+                self._time_format_24 = value
+            elif(self._current_option == ClockSettings.ALARM_SET):
+                self._alarm_set = value
+            elif(self._current_option == ClockSettings.ALARM_MIN):
+                self._alarm_time[1] = value
+            elif(self._current_option == ClockSettings.ALARM_HOUR):
+                self._alarm_time[0] = value
+        
+        if(value != self._previous_value):
+            print("Current Screen") 
+            print(self.get_screen())
+            print("Current Option") 
+            print(self.get_option())
+            print("Current Time")  
+            print(self.get_time())
+            print("Current Alarm Time") 
+            print(self.get_alarm_hour())
+            print(self.get_alarm_min())
+            print(value)
+        
+        self._previous_value = value
+
+    def _reset_button_callback(self):
+        self._reset_button_timer.init(mode=Timer.ONE_SHOT, period=10, callback=self._reset_button_timer_callback())
+
+    def _reset_button_timer_callback(self):
+        pass
+
+    def _selection_button_callback(self):
+        self._reset_button_timer.init(mode=Timer.ONE_SHOT, period=10, callback=self._selection_button_timer_callback())
+
+    def _selection_button_timer_callback(self):
+        print("yes")
+        if(not self._in_option and self._in_screen and self._current_screen == Screens.TIME_MENU):
+            self._in_option = True
+            if(self._current_option == ClockSettings.TIME_HOUR):
+                self._selection_encoder.set_update_val(self.get_time()[0], 23)
+            elif(self._current_option == ClockSettings.TIME_MIN):
+                self._selection_encoder.set_update_val(self.get_time()[1], 59)
+            elif(self._current_option == ClockSettings.TIME_FORMAT):
+                self._selection_encoder.set_update_val(self._time_format_24, 1)
+            elif(self._current_option == ClockSettings.ALARM_SET):
+                self._selection_encoder.set_update_val(self._alarm_set, 1)
+            elif(self._current_option == ClockSettings.ALARM_MIN):
+                self._selection_encoder.set_update_val(self._alarm_time[1], 59)
+            elif(self._current_option == ClockSettings.ALARM_HOUR):
+                self._selection_encoder.set_update_val(self._alarm_time[0], 24)
+        
+        elif(self._in_option):
+            self._in_option = False
+            self._selection_encoder.set_update_val(self._current_option, 5)
+
+        elif(not self._in_screen):
+            self._in_screen = True
+            if(self._current_screen == Screens.TIME_MENU):
+                self._selection_encoder.set_update_val(self._current_option, 5)
+            elif(self._current_screen == Screens.RADIO_MENU):
+                pass
+            elif(self._current_screen == Screens.STANDBY):
+                pass
+
+        
+
+    def get_screen(self):
+        return self._current_screen
+
+    def get_option(self):
+        return self._current_option
+    
+    def get_station(self):
+        pass
+
+    def get_time(self):
+        time = self._rtc.datetime()
+        if(not self._time_format_24 and time[4] > 12):
+            return (time[4] - 12, time[5], time[6], time[7])
+        return (time[4], time[5], time[6], time[7])
+    
+    def get_date(self):
+        date = self._rtc.datetime()
+        return (date[0], date[1], date[2], date[3])
+    
+    def set_alarm_state(self, state: bool):
+        self._alarm_triggered = state
+    
+    def enable_alarm(self, state: bool):
+        self._alarm_set = state
+
+    def set_alarm_hour(self, hour):
+        self._alarm_time[0] = hour
+
+    def set_alarm_min(self, minute):
+        self._alarm_time[1] = minute
+    
+    def get_alarm_hour(self):
+        return self._alarm_time[0]
+
+    def get_alarm_min(self):
+        return self._alarm_time[1]
+    
