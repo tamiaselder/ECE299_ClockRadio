@@ -1,11 +1,10 @@
-from machine import Pin, SPI, Timer # type: ignore # SPI is a class associated with the machine library. 
-import utime # type: ignore
-
+from machine import Pin, SPI, Timer  # SPI is a class associated with the machine library. 
+import utime 
 
 # The below specified libraries have to be included. Also, ssd1306.py must be saved on the Pico. 
-import ssd1306# this is the driver library and the corresponding class
-import framebuf # type: ignore # this is another library for the display. 
-import framebuf2
+import ssd1306 # this is the driver library and the corresponding class
+import framebuf  # this is another library for the display. 
+import framebuf2 
 
 
 
@@ -76,7 +75,7 @@ while ( True ):
 #
 # Draw box below the text
 #
-        #oled.rect( 64, 0, 64, 32, 0, True )        
+        #led.rect( 64, 0, 64, 32, 0, True )        
         #oled.rect( 0, 0, 128, 32, 1 ) 
         #oled.text("Welcome to ECE", 0, 2, 1) # Print the text starting from 0th column and 0th row
         oled.large_text("10:35", 2, 2, 3)
