@@ -95,11 +95,3 @@ class Encoder():
     def value(self):
         return self._current_update_value
 
-encoder = Encoder(18, 17)
-
-vol = [1]
-encoder.set_update_val(vol, 30)
-
-while True:
-    sleep(1)
-    # print(vol)

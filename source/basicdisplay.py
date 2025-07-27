@@ -42,7 +42,7 @@ oled = ssd1306.SSD1306_SPI( SCREEN_WIDTH, SCREEN_HEIGHT, oled_spi, spi_dc, spi_r
 # tim = Timer(1)
 
 # # Assign a value to a variable
-Count = 3113
+#Count = 3113
 
 # def tim_callback(x):
 #         global Count
@@ -55,8 +55,8 @@ Count = 3113
 
 # button.irq(button_callback, Pin.IRQ_RISING)
 
-
 while ( True ):
+        
         
 
   
@@ -78,9 +78,12 @@ while ( True ):
         #led.rect( 64, 0, 64, 32, 0, True )        
         #oled.rect( 0, 0, 128, 32, 1 ) 
         #oled.text("Welcome to ECE", 0, 2, 1) # Print the text starting from 0th column and 0th row
-        oled.large_text("10:35", 2, 2, 3)
+        oled.large_text(str(sample_time)+':'+str(sample_time), 2, 2, 3)
 
 #
 # Transfer the buffer to the screen
 #
         oled.show()
+
+        sample_time += 1
+        utime.sleep(1)
