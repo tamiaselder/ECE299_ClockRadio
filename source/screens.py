@@ -33,9 +33,9 @@ class Screen():
     def standby(self, time, time_frmt, day, alrm_hr, alrm_min, alrm_set, radio_st):
 
         hour = time[0]
-        if ( hour < 10 & time_frmt):
+        if (hour < 10 and time_frmt): # 24 hour mode == 1
             hour_str = "0" + str(hour)
-        elif (hour < 10):
+        elif (hour < 10 and not time_frmt):
             hour_str = " " + str(hour)
         else: hour_str = str(hour)
 
@@ -65,9 +65,9 @@ class Screen():
     def time_menu(self, time, day, alrm_st, alrm_hr, alrm_min, time_frmt):
         
         hour = time[0]
-        if (hour < 10 ):
+        if (hour < 10 and time_frmt): # 24 hour mode == 1
             hour_str = "0" + str(hour)
-        elif (hour < 10 & time_frmt):
+        elif (hour < 10 and not time_frmt):
             hour_str = " " + str(hour)
         else: hour_str = str(hour)
 
@@ -98,18 +98,35 @@ class Screen():
         self.oled.show()
     
 
-    def hlt_time(self):
-        self.oled.rect(47, 8, 81, 18, 1)
+    def hlt_time_hr(self):
+        self.oled.rect(47, 8, 33, 18, 1)
+        self.oled.show()
+
+    def hlt_time_min(self):
+        self.oled.rect(95, 8, 33, 18, 1)
         self.oled.show()
 
     def hlt_clkmd(self):
-        self.oled.rect(94, 26, 28, 11, 1)
+        self.oled.rect(95, 26, 33, 11, 1)
         self.oled.show()
 
-    def hlt_alrm(self):
-        self.oled.rect(47, 36, 81, 18, 1)
+    def hlt_alrm_hr(self):
+        self.oled.rect(47, 36, 33, 18, 1)
+        self.oled.show()
+
+    def hlt_alrm_min(self):
+        self.oled.rect(95, 36, 33, 18, 1)
         self.oled.show()
 
     def hlt_alrmst(self):
         self.oled.rect(70, 54, 28, 10, 1)
+        self.oled.show()
+
+    def radio_menu(self, radio_st, rds_info, volume):
+        #display output
+        self.oled.fill(0)
+        self.oled.text("Radio Info", 24, 0, 1)
+        self.oled.large_text(str(round(radio_st, 1)) + " FM", 0, 12, 2)
+        self.oled.text(rds_info, 0, 30, 1)
+        self.oled.text("Volume " + str(volume), 0, 40, 1)
         self.oled.show()
