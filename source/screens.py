@@ -25,12 +25,18 @@ class Screen():
 
         # Initialize the display
         self.oled = ssd1306.SSD1306_SPI( SCREEN_WIDTH, SCREEN_HEIGHT, oled_spi, spi_dc, spi_res, spi_cs, True )
+    
+    def clear_disp(self):
+        self.oled.fill(0)
+        self.oled.show()
 
-    def standby(self, time, day, alrm_time, alrm_st, radio_st):
+    def standby(self, time, time_frmt, day, alrm_hr, alrm_min, alrm_set, radio_st):
 
         hour = time[0]
-        if ( hour < 10):
+        if ( hour < 10 & time_frmt):
             hour_str = "0" + str(hour)
+        elif (hour < 10):
+            hour_str = " " + str(hour)
         else: hour_str = str(hour)
 
         minute = time[1]
@@ -38,16 +44,72 @@ class Screen():
             minute_str = "0" + str(minute)
         else: minute_str = str(minute)
 
-        day_str = str(day[1]) + "/" + str(day[2])
+        day_names = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        month_names = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        day_str = day_names[day[3]-1] + " " + month_names[day[1]-1] + " " + str(day[2])
+
+        radio_str = str(radio_st) + " Rock Music"
         
-        self.oled.contrast(0)
+        alrm_state = ["Off","On "]
+        alrm_str = "Alarm " + alrm_state[alrm_set] + " " + str(alrm_hr) + ":" + str(alrm_min)
+        
+        #self.oled.contrast(250)
         self.oled.fill(0)
-        self.oled.large_text(hour_str +':'+ minute_str, 2, 2, 3)
-        self.oled.text(day_str, 2, 28, 1)
+        self.oled.large_text(hour_str +':'+ minute_str, 4, 4, 3)
+        self.oled.text(day_str, 0, 32, 1)
+        self.oled.text(radio_str, 0, 43, 1)
+        self.oled.text(alrm_str, 0, 54, 1)
         self.oled.show()
+
+
+    def time_menu(self, time, day, alrm_st, alrm_hr, alrm_min, time_frmt):
         
+        hour = time[0]
+        if (hour < 10 ):
+            hour_str = "0" + str(hour)
+        elif (hour < 10 & time_frmt):
+            hour_str = " " + str(hour)
+        else: hour_str = str(hour)
 
+        minute = time[1]
+        if ( minute < 10):
+            minute_str = "0" + str(minute)
+        else: minute_str = str(minute)
 
+        day_names = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        DayOfWeek = day_names[day[3]-1]
 
+        date = str(day[2])
+        month = str(day[1])
+        year = str(day[0])
 
+        time_type = ["12h", "24h"]
+        alrm_state = ["Alarm is On", "Alarm is Off"]
 
+        #display output
+        self.oled.fill(0)
+        self.oled.text("Clock Settings", 8, 0, 1)
+        self.oled.text("Time:", 0, 14, 1)
+        self.oled.large_text(hour_str +':'+ minute_str, 47, 10, 2)
+        self.oled.text("Clock Mode: " + time_type[time_frmt], 0, 28, 1)
+        self.oled.text("Alarm:", 0, 42, 1)
+        self.oled.large_text(str(alrm_hr) + ":" + str(alrm_min), 47, 38, 2)
+        self.oled.text(alrm_state[alrm_st], 0, 56, 1)
+        self.oled.show()
+    
+
+    def hlt_time(self):
+        self.oled.rect(47, 8, 81, 18, 1)
+        self.oled.show()
+
+    def hlt_clkmd(self):
+        self.oled.rect(94, 26, 28, 11, 1)
+        self.oled.show()
+
+    def hlt_alrm(self):
+        self.oled.rect(47, 36, 81, 18, 1)
+        self.oled.show()
+
+    def hlt_alrmst(self):
+        self.oled.rect(70, 54, 28, 10, 1)
+        self.oled.show()
