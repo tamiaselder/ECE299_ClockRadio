@@ -23,16 +23,16 @@ class Menu():
         self._current_screen = Screens.STANDBY
         self._current_option = 0
 
-        self._in_screen = False
-        self._in_option = False
+        self._in_screen = 0
+        self._in_option = 0
 
         self._rtc = RTC()
 
         self._alarm_time = [0, 0]
         self._alarm_triggered = False
-        self._alarm_set = False
+        self._alarm_set = 0
 
-        self._time_format_24 = True
+        self._time_format_24 = 1
 
         self._vol_encoder = vol_encoder
         self._selection_encoder = selection_endcoder
@@ -55,14 +55,16 @@ class Menu():
 
 
     def update(self):
-        # vol = self._vol_encoder.value()
-        # if(vol == 0):
-        #     self.radio.SetMute(True)
-        #     self.radio.SetMute(True)
-        # else:
-        #     self.radio.SetMute(False)
-        #     self.radio.SetVolume(vol)
-        #     self.radio.UpdateSettings
+        vol = self._vol_encoder.value()
+        if(vol == 0 and vol != self.get_volume()):
+            print(vol)
+            self._radio.SetMute(True)
+            self._radio.ProgramRadio()
+        elif(vol != self.get_volume()):
+            print(vol)
+            self._radio.SetMute(False)
+            self._radio.SetVolume(vol)
+            self._radio.ProgramRadio()
         
         value = self._selection_encoder.value()
         if(value != self._previous_value):
@@ -130,7 +132,7 @@ class Menu():
                 self._selection_encoder.set_update_val(self._time_format_24, 0, 1)
                 self._selection_encoder.set_update_increment(1)
             elif(self._current_option == ClockSettings.ALARM_SET):
-                self._selection_encoder.set_update_val(self._alarm_set, 1)
+                self._selection_encoder.set_update_val(self._alarm_set, 0, 1)
                 self._selection_encoder.set_update_increment(1)
             elif(self._current_option == ClockSettings.ALARM_MIN):
                 self._selection_encoder.set_update_val(self._alarm_time[1], 0, 59)
@@ -165,6 +167,9 @@ class Menu():
     
     def get_station(self):
         return self._radio.GetSettings()[2]
+    
+    def get_volume(self):
+        return self._radio.GetSettings()[1]
 
     def get_time(self):
         time = self._rtc.datetime()
@@ -179,6 +184,8 @@ class Menu():
     
     def set_time_minute(self, minute):
         time = self.get_time()
+        if(not self._time_format_24):
+            time[0] = time[0] + 12
         date = self.get_date()
         self._rtc.datetime([date[0], date[1], date[2], date [3], time[0], minute, time[2], time[3]])
     
@@ -203,4 +210,10 @@ class Menu():
 
     def get_alarm_min(self):
         return self._alarm_time[1]
+    
+    def get_time_format(self):
+        return self._time_format_24
+    
+    def get_alarm_set(self):
+        return self._alarm_set
     
