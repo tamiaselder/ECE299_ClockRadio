@@ -44,7 +44,7 @@ class Screen():
             minute_str = "0" + str(minute)
         else: minute_str = str(minute)
 
-        day_names = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        day_names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
         month_names = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
         day_str = day_names[day[3]-1] + " " + month_names[day[1]-1] + " " + str(day[2])
 
@@ -76,6 +76,17 @@ class Screen():
             minute_str = "0" + str(minute)
         else: minute_str = str(minute)
 
+
+        if (alrm_hr < 10 and time_frmt): # 24 hour mode == 1
+            alrm_hour_str = "0" + str(alrm_hr)
+        elif (alrm_hr < 10 and not time_frmt):
+            alrm_hour_str = " " + str(alrm_hr)
+        else: alrm_hour_str = str(alrm_hr)
+
+        if (alrm_min < 10):
+            alrm_minute_str = "0" + str(alrm_min)
+        else: alrm_minute_str = str(alrm_min)
+
         day_names = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         DayOfWeek = day_names[day[3]-1]
 
@@ -93,7 +104,7 @@ class Screen():
         self.oled.large_text(hour_str +':'+ minute_str, 47, 10, 2)
         self.oled.text("Clock Mode: " + time_type[time_frmt], 0, 28, 1)
         self.oled.text("Alarm:", 0, 42, 1)
-        self.oled.large_text(str(alrm_hr) + ":" + str(alrm_min), 47, 38, 2)
+        self.oled.large_text(alrm_hour_str + ":" + alrm_minute_str, 47, 38, 2)
         self.oled.text(alrm_state[alrm_st], 0, 56, 1)
         self.oled.show()
     
@@ -129,4 +140,9 @@ class Screen():
         self.oled.large_text(str(round(radio_st, 1)) + " FM", 0, 12, 2)
         self.oled.text(rds_info, 0, 30, 1)
         self.oled.text("Volume " + str(volume), 0, 40, 1)
+        self.oled.show()
+
+    def face(self):
+        self.oled.fill(0)
+        self.oled.large_text("oo", 0, 0, 8)
         self.oled.show()

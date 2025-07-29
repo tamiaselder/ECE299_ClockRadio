@@ -28,7 +28,7 @@ class Menu():
 
         self._rtc = RTC()
 
-        self._alarm_time = [0, 0]
+        self._alarm_time = [12, 0]
         self._alarm_triggered = False
         self._alarm_set = 0
 
@@ -43,8 +43,10 @@ class Menu():
         self._selection_button_timer = Timer()
         self._reset_button_timer = Timer()
         self._snooze_timer = Timer()
+    
+        self._snooze_on = 0
 
-        self._vol_encoder.set_update_val(self._radio.GetSettings()[2], 0, 15)
+        self._vol_encoder.set_update_val(self._radio.GetSettings()[1], 0, 15)
         self._selection_encoder.set_update_val(0, 0, 2)
 
         self._selection_button.irq(self._selection_button_callback, Pin.IRQ_RISING)
@@ -57,21 +59,29 @@ class Menu():
     def update(self):
         vol = self._vol_encoder.value()
         if(vol == 0 and vol != self.get_volume()):
-            print(vol)
+            self._radio.SetVolume(0)
             self._radio.SetMute(True)
             self._radio.ProgramRadio()
         elif(vol != self.get_volume()):
-            print(vol)
             self._radio.SetMute(False)
             self._radio.SetVolume(vol)
             self._radio.ProgramRadio()
         
+        time = self._rtc.datetime()[4:8]
+        if(self._alarm_time[0] == time[0] and self._alarm_time[1] == time[1] and time[2]  == 0 and self._alarm_set == 1):
+            self._alarm_triggered = True
+            self._selection_encoder.set_update_val(0, 0, 1)
+            self._selection_encoder.set_update_increment(1)
+
         value = self._selection_encoder.value()
         if(value != self._previous_value):
-            if(not self._in_screen):
+            if(self._alarm_triggered):
+                self._snooze_on = value
+
+            elif(not self._in_screen):
                 self._current_screen = value
 
-            if(self._in_screen and not self._in_option):
+            elif(self._in_screen and not self._in_option):
                 if(self._current_screen == Screens.TIME_MENU):
                     self._current_option = value
                 elif(self._current_screen == Screens.RADIO_MENU):
@@ -80,7 +90,7 @@ class Menu():
                 elif(self._current_screen == Screens.STANDBY):
                     pass
             
-            if(self._in_option):
+            elif(self._in_option):
                 if(self._current_option == ClockSettings.TIME_HOUR):
                     self.set_time_hour(value)
                 elif(self._current_option == ClockSettings.TIME_MIN):
@@ -107,20 +117,33 @@ class Menu():
             print(self.get_alarm_min())
             print(value)
         
+        if(self._alarm_triggered):
+            print("ALARM")
         self._previous_value = value
 
     def _reset_button_callback(self,pin):
         self._reset_button_timer.init(mode=Timer.ONE_SHOT, period=10, callback=self._reset_button_timer_callback)
 
-    def _reset_button_timer_callback(self,pin):
+    def _reset_button_timer_callback(self, pin):
         if(self._in_screen and not self._in_option):
-            self._in_screen == False
+            self._in_screen = False
+            self._selection_encoder.set_update_val(self._current_screen, 0, 2)
+            self._selection_encoder.set_update_increment(1)
 
     def _selection_button_callback(self,pin):
         self._reset_button_timer.init(mode=Timer.ONE_SHOT, period=10, callback=self._selection_button_timer_callback)
 
     def _selection_button_timer_callback(self,pin):
-        if(not self._in_option and self._in_screen and self._current_screen == Screens.TIME_MENU):
+        if(self._alarm_triggered == True):
+            if self._snooze_on == 1 :
+                self._snooze_timer.init(mode=Timer.ONE_SHOT, period=300000, callback=self._snooze_timer_callback)
+            self._alarm_triggered = False
+            self._in_screen = False
+            self._in_option = False
+            self._selection_encoder.set_update_increment(1)
+            self._selection_encoder.set_update_val(self._current_screen, 0, 2)
+
+        elif(not self._in_option and self._in_screen and self._current_screen == Screens.TIME_MENU):
             self._in_option = True
             if(self._current_option == ClockSettings.TIME_HOUR):
                 self._selection_encoder.set_update_val(self.get_time()[0], 0, 23)
@@ -157,7 +180,10 @@ class Menu():
             elif(self._current_screen == Screens.STANDBY):
                 pass
 
-        
+    def _snooze_timer_callback(self, pin):
+        self._alarm_triggered = True
+        self._selection_encoder.set_update_val(0, 0, 1)
+        self._selection_encoder.set_update_increment(1)
 
     def get_screen(self):
         return self._current_screen
@@ -173,8 +199,12 @@ class Menu():
 
     def get_time(self):
         time = self._rtc.datetime()
-        if(not self._time_format_24 and time[4] > 12):
-            return (time[4] - 12, time[5], time[6], time[7])
+        if(not self._time_format_24 and (time[4] > 12 or time[4] == 0)):
+            return (
+                12 if time[4] == 0 else time[4] - 12, 
+                time[5], 
+                time[6], 
+                time[7])
         return (time[4], time[5], time[6], time[7])
     
     def set_time_hour(self, hour):
@@ -184,9 +214,17 @@ class Menu():
     
     def set_time_minute(self, minute):
         time = self.get_time()
-        if(not self._time_format_24):
-            time[0] = time[0] + 12
         date = self.get_date()
+        if(not self._time_format_24):
+            self._rtc.datetime([
+                date[0], 
+                date[1], 
+                date[2], 
+                date [3], 
+                time[0] + 12, 
+                minute, 
+                time[2], 
+                time[3]])
         self._rtc.datetime([date[0], date[1], date[2], date [3], time[0], minute, time[2], time[3]])
     
     def get_date(self):
@@ -216,4 +254,10 @@ class Menu():
     
     def get_alarm_set(self):
         return self._alarm_set
+    
+    def in_screen(self):
+        return self._in_screen
+    
+    def in_option(self):
+        return self._in_option
     
