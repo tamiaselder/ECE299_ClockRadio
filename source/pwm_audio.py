@@ -3,20 +3,10 @@ import utime
 from fm_radio import Radio
 import sample
 
-machine.freq(176000000)
-# print(machine.freq())
-
-# audio = PWM(Pin(10, Pin.OUT))
-# audio.duty_u16(220)
-# note = 200
-radio = Radio(101.3, 3, True)
-
-
 class PWM_Audio():
     def __init__(self):
         self.loop_lim = len(sample.WAV_DATA)
         self.audio = PWM(Pin(10, Pin.OUT))
-        self.audio.freq(88000)
         self.index = 0
         self.duty_cycle = 0
         self.timer = Timer()
@@ -30,17 +20,20 @@ class PWM_Audio():
         pass
 
     def pwm_start(self):
+        self.audio.freq(88000)
         self.timer.init(mode=Timer.PERIODIC, freq=11000, callback=self.pwm_interupt)
 
     def pwm_stop(self):
         self.timer.deinit()
+        self.audio.deinit()
+
+# radio = Radio(101.9, 1, True)
+
+# audio = PWM_Audio()
+
+# audio.pwm_start()
+# audio.pwm_stop()
 
 
-audio=PWM_Audio()
-
-audio.pwm_start()
-
-while(True):
-    pass
-
-
+# while True:
+#     pass

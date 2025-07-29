@@ -18,7 +18,6 @@ radio = Radio(101.9, 1, False)
 menu = Menu(radio, volume_encoder, selection_encoder, select_button, snooze_button)
 
 while True: 
-    utime.sleep_ms(1)
     menu.update()
     if(menu.get_screen() == Screens.STANDBY):
         screen.standby(
@@ -56,7 +55,8 @@ while True:
             menu.get_station(), 
             "Moosic", 
             menu.get_volume())
-    # screen.face()
+    
+
         
 
 
