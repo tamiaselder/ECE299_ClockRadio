@@ -54,7 +54,7 @@ while True:
                 screen.hlt_alrm_min()
             elif(menu.get_option() == ClockSettings.ALARM_SET):
                 screen.hlt_alrmst()
-
+                
     elif(menu.get_screen() == Screens.ALARM_MENU):
         screen.alarm_menu(
             menu.get_alarm_vol(),
@@ -62,11 +62,11 @@ while True:
             menu.get_alarm_tone())
         if(menu.in_screen() == True):
             if(menu.get_option() == AlarmSettings.ALARM_TONE):
-                screen.hlt_time_hr()
+                screen.hlt_sound()
             elif(menu.get_option() == AlarmSettings.ALARM_VOL):
-                screen.hlt_time_min()
+                screen.hlt_vol()
             elif(menu.get_option() == AlarmSettings.SNOOZE_TIME):
-                screen.hlt_clkmd()
+                screen.hlt_snooze_time()
 
     elif(menu.get_screen() == Screens.RADIO_MENU):
         screen.radio_menu(

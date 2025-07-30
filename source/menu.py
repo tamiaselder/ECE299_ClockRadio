@@ -101,6 +101,8 @@ class Menu():
             elif(self._in_screen and not self._in_option):
                 if(self._current_screen == Screens.TIME_MENU):
                     self._current_option = value
+                if(self._current_screen == Screens.ALARM_MENU):
+                    self._current_option = value
                 elif(self._current_screen == Screens.RADIO_MENU):
                     self._radio.SetFrequency(value)
                     self._radio.UpdateSettings()
@@ -128,7 +130,7 @@ class Menu():
                 elif(self._current_option == AlarmSettings.ALARM_VOL):
                     self._alarm_vol = value
                 elif(self._current_option == AlarmSettings.SNOOZE_TIME):
-                    self._snoooze_time = value
+                    self._snooze_time = value
         
         self._previous_value = value
 
@@ -147,7 +149,7 @@ class Menu():
     def _selection_button_timer_callback(self,pin):
         if(self._alarm_triggered == True):
             if self._snooze_on == 1 :
-                self._snooze_timer.init(mode=Timer.ONE_SHOT, period=self._snooze_time * 6000, callback=self._snooze_timer_callback)
+                self._snooze_timer.init(mode=Timer.ONE_SHOT, period= self._snooze_time * 60000, callback=self._snooze_timer_callback)
             self._alarm_triggered = False
             self._in_screen = False
             self._in_option = False

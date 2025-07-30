@@ -172,13 +172,13 @@ class Screen():
         self.oled.show()
 
     def hlt_sound(self):
-        self.oled.rect(47, 11, 58, 10)
+        self.oled.rect(47, 11, 58, 10, 1)
         self.oled.show()
     
     def hlt_vol(self):
-        self.oled.rect(63, 21, 18, 10)
+        self.oled.rect(63, 21, 18, 10, 1)
         self.oled.show()
     
     def hlt_snooze_time(self):
-        self.oled.rect(95, 31, 18, 10)
+        self.oled.rect(95, 31, 18, 10, 1)
         self.oled.show()
