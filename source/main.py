@@ -16,7 +16,7 @@ select_button = Pin(28, Pin.IN, Pin.PULL_UP)
 snooze_button = Pin(16, Pin.IN, Pin.PULL_UP)
 
 screen = Screen()
-radio = Radio(101.9, 1, False)
+radio = Radio(101.9, 0, True)
 
 menu = Menu(radio, volume_encoder, selection_encoder, select_button, snooze_button)
 
@@ -54,6 +54,19 @@ while True:
                 screen.hlt_alrm_min()
             elif(menu.get_option() == ClockSettings.ALARM_SET):
                 screen.hlt_alrmst()
+
+    elif(menu.get_screen() == Screens.ALARM_MENU):
+        screen.alarm_menu(
+            menu.get_alarm_vol(),
+            menu.get_snooze_time(),
+            menu.get_alarm_tone())
+        if(menu.in_screen() == True):
+            if(menu.get_option() == ClockSettings.ALARM_TONE):
+                screen.hlt_time_hr()
+            elif(menu.get_option() == ClockSettings.ALARM_VOL):
+                screen.hlt_time_min()
+            elif(menu.get_option() == ClockSettings.SNOOZE_TIME):
+                screen.hlt_clkmd()
 
     elif(menu.get_screen() == Screens.RADIO_MENU):
         screen.radio_menu(

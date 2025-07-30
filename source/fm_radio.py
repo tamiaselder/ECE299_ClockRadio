@@ -161,7 +161,3 @@ class Radio:
             StereoStatus = False
         
         return( MuteStatus, VolumeStatus, FrequencyStatus, StereoStatus )
-    
-    def GetRDS(self):
-        self.RDS = self.radio_i2c.readfrom( self.i2c_device_address, 256 )
-        print(self.RDS)
