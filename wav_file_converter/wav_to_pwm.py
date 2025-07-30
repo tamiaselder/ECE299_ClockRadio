@@ -2,7 +2,7 @@ import soundfile as sf
 import matplotlib.pyplot as plt
 import samplerate
 
-soundfile = 'sample.wav'
+soundfile = 'weezer-riff.wav'
 data_in, datasamplerate = sf.read(soundfile)
 # This means stereo so extract one channel 0
 if len(data_in.shape)>1:
@@ -12,7 +12,7 @@ plt.ylabel(soundfile)
 plt.show()
 
 converter = 'sinc_best'  # or 'sinc_fastest', ...
-desired_sample_rate = 4000.0
+desired_sample_rate = 8000.0
 ratio = desired_sample_rate/datasamplerate
 data_out = samplerate.resample(data_in, ratio, converter)
 print(data_out)
@@ -54,5 +54,7 @@ for v in data_out:
 # the average of the first and last. 
 end_value = int( (firstvalue + lastvalue) / 2)
 m68code+=str(end_value)+'    \r\n};'
-print(m68code)    
+file_path = "sample.txt"
+f =open(file_path, 'w')
+f.write(m68code)
 
