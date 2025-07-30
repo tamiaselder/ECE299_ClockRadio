@@ -19,7 +19,9 @@ menu = Menu(radio, volume_encoder, selection_encoder, select_button, snooze_butt
 
 while True: 
     menu.update()
-    if(menu.get_screen() == Screens.STANDBY):
+    if(menu.alarm_triggered()):
+        screen.alarm(menu.get_snooze())
+    elif(menu.get_screen() == Screens.STANDBY):
         screen.standby(
             menu.get_time(), 
             menu.get_time_format(),
