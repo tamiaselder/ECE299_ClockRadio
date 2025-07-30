@@ -167,4 +167,13 @@ class Screen():
         self.oled.text("Alarm Settings", 8, 2, 1)
         self.oled.text("Sound " + alarm_samples[alarm_clip], 0, 12, 1)
         self.oled.text("Volume: " + str(alarm_vol), 0, 22, 1)
-        self.oled.text("Snooze time:" str(snooze_time), 0, 32, 1)
+        self.oled.text("Snooze time:" + str(snooze_time), 0, 32, 1)
+
+    def hlt_sound(self):
+        self.oled.rect(47, 11, 58, 10)
+    
+    def hlt_vol(self):
+        self.oled.rect(63, 21, 18, 10)
+    
+    def hlt_snooze_time(self):
+        self.oled.rect(95, 31, 18, 10)
