@@ -161,3 +161,10 @@ class Screen():
         self.oled.large_text("Alarm", 24, 2, 2)
         self.oled.text("Snooze   Cancel", 4, 26, 1)
         self.oled.show()
+
+    def alarm_menu(self, alarm_vol, snooze_time, alarm_clip):
+        alarm_samples = ["Twinkle", "Scale", "Weezer"]
+        self.oled.text("Alarm Settings", 8, 2, 1)
+        self.oled.text("Sound " + alarm_samples[alarm_clip], 0, 12, 1)
+        self.oled.text("Volume: " + str(alarm_vol), 0, 22, 1)
+        self.oled.text("Snooze time:" str(snooze_time), 0, 32, 1)
