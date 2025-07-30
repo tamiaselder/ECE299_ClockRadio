@@ -1,4 +1,4 @@
-from menu import Menu, Screens, ClockSettings
+from menu import Menu, Screens, ClockSettings, AlarmSettings
 from rotary import Encoder
 from ssd1306 import SSD1306_SPI
 from fm_radio import Radio
@@ -61,11 +61,11 @@ while True:
             menu.get_snooze_time(),
             menu.get_alarm_tone())
         if(menu.in_screen() == True):
-            if(menu.get_option() == ClockSettings.ALARM_TONE):
+            if(menu.get_option() == AlarmSettings.ALARM_TONE):
                 screen.hlt_time_hr()
-            elif(menu.get_option() == ClockSettings.ALARM_VOL):
+            elif(menu.get_option() == AlarmSettings.ALARM_VOL):
                 screen.hlt_time_min()
-            elif(menu.get_option() == ClockSettings.SNOOZE_TIME):
+            elif(menu.get_option() == AlarmSettings.SNOOZE_TIME):
                 screen.hlt_clkmd()
 
     elif(menu.get_screen() == Screens.RADIO_MENU):

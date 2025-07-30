@@ -58,7 +58,7 @@ class Menu():
         self._snooze_on = 0
 
         self._vol_encoder.set_update_val(self._radio.GetSettings()[1], 0, 15)
-        self._selection_encoder.set_update_val(0, 0, 2)
+        self._selection_encoder.set_update_val(0, 0, 3)
 
         self._selection_button.irq(self._selection_button_callback, Pin.IRQ_RISING)
         self._reset_button.irq(self._reset_button_callback, Pin.IRQ_RISING)
@@ -108,7 +108,7 @@ class Menu():
                 elif(self._current_screen == Screens.STANDBY):
                     pass
             
-            elif(self._in_option and self._current_screen == Screen.TIME_MENU):
+            elif(self._in_option and self._current_screen == Screens.TIME_MENU):
                 if(self._current_option == ClockSettings.TIME_HOUR):
                     self.set_time_hour(value)
                 elif(self._current_option == ClockSettings.TIME_MIN):
@@ -122,12 +122,12 @@ class Menu():
                 elif(self._current_option == ClockSettings.ALARM_HOUR):
                     self._alarm_time[0] = value
             
-            elif(self._in_option and self._current_screen == Screen.ALARM_MENU):
+            elif(self._in_option and self._current_screen == Screens.ALARM_MENU):
                 if(self._current_option == AlarmSettings.ALARM_TONE):
                     self._alarm_tone = value
-                elif(self._current_option == ClockSettings.ALARM_VOL):
+                elif(self._current_option == AlarmSettings.ALARM_VOL):
                     self._alarm_vol = value
-                elif(self._current_option == ClockSettings.SNOOZE_TIME):
+                elif(self._current_option == AlarmSettings.SNOOZE_TIME):
                     self._snoooze_time = value
         
         self._previous_value = value
@@ -181,17 +181,18 @@ class Menu():
                 self._selection_encoder.set_update_val(self._alarm_time[0], 0, 23)
                 self._selection_encoder.set_update_increment(1)
         
-        elif(not self._in_option and self._in_screen and self._current_screen == Screen.ALARM_MENU):
-                if(self._current_option == AlarmSettings.ALARM_TONE):
-                    self._selection_encoder.set_update_val(self._alarm_tone, 0, 2)
-                    self._selection_encoder.set_update_increment(1)
-                elif(self._current_option == ClockSettings.ALARM_VOL):
-                    self._selection_encoder.set_update_val(self._alarm_vol, 1, 20)
-                    self._selection_encoder.set_update_increment(1)
-                elif(self._current_option == ClockSettings.SNOOZE_TIME):
-                    self._selection_encoder.set_update_val(self._snooze_time, 1, 20)
-                    self._selection_encoder.set_update_increment(1)
-        
+        elif(not self._in_option and self._in_screen and self._current_screen == Screens.ALARM_MENU):
+            self._in_option = True
+            if(self._current_option == AlarmSettings.ALARM_TONE):
+                self._selection_encoder.set_update_val(self._alarm_tone, 0, 2)
+                self._selection_encoder.set_update_increment(1)
+            elif(self._current_option == AlarmSettings.ALARM_VOL):
+                self._selection_encoder.set_update_val(self._alarm_vol, 1, 20)
+                self._selection_encoder.set_update_increment(1)
+            elif(self._current_option == AlarmSettings.SNOOZE_TIME):
+                self._selection_encoder.set_update_val(self._snooze_time, 1, 20)
+                self._selection_encoder.set_update_increment(1)
+    
         elif(self._in_option):
             self._in_option = False
             if(self._current_screen == Screens.TIME_MENU):
@@ -222,7 +223,8 @@ class Menu():
             self._radio.ProgramRadio()
             self._selection_encoder.set_update_val(0, 0, 1)
             self._selection_encoder.set_update_increment(1)
-            self._audio.pwm_start()
+            self._audio.reinit(self._alarm_tone)
+            self._audio.pwm_start(self._alarm_vol)
 
     def get_screen(self):
         return self._current_screen
