@@ -1,8 +1,8 @@
 {
-    "python.languageServer": "Jedi",
+    "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.diagnosticSeverityOverrides": {
-        "reportMissingModuleSource": "information"
+        "reportMissingModuleSource": "none"
     },
     "python.terminal.activateEnvironment": false,
     "micropico.openOnStart": true,
@@ -11,9 +11,5 @@
     ],
     "python.analysis.extraPaths": [
         "~/.micropico-stubs/included"
-    ],
-    "python.analysis.autoImportCompletions": true,
-    "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python-envs.pythonProjects": [],
-    "micropico.syncFolder": "demo_build"
+    ]
 }

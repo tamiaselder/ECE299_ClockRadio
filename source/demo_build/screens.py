@@ -48,9 +48,9 @@ class Screen():
             alrm_minute_str = "0" + str(alrm_min)
         else: alrm_minute_str = str(alrm_min)
 
-        day_names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        day_names = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
         month_names = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-        day_str = day_names[day[3]-1] + " " + month_names[day[1]-1] + " " + str(day[2])
+        day_str = day_names[day[3]] + " " + month_names[day[1]-1] + " " + str(day[2])
 
         radio_str = str(radio_st) + " Rock Music"
         
