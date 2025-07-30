@@ -30,6 +30,7 @@ class PWM_Audio():
         pass
 
     def pwm_start(self,vol):
+        self.index=0
         self.audio.duty_u16(vol*500)
         self.timer.init(mode=Timer.ONE_SHOT, period = 1, callback=self.pwm_interupt)
 

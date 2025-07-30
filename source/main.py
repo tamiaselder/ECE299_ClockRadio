@@ -54,12 +54,13 @@ while True:
                 screen.hlt_alrm_min()
             elif(menu.get_option() == ClockSettings.ALARM_SET):
                 screen.hlt_alrmst()
-                
+
     elif(menu.get_screen() == Screens.ALARM_MENU):
         screen.alarm_menu(
             menu.get_alarm_vol(),
             menu.get_snooze_time(),
-            menu.get_alarm_tone())
+            menu.get_alarm_tone(),
+            menu.get_snooze())
         if(menu.in_screen() == True):
             if(menu.get_option() == AlarmSettings.ALARM_TONE):
                 screen.hlt_sound()
