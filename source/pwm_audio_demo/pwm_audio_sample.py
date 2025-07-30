@@ -1,11 +1,13 @@
 from machine import Pin, Timer, freq, PWM
 import utime
 from fm_radio import Radio
-import sample
+# import meow
+# import plug
+# import weezer
 
 class PWM_Audio():
     def __init__(self):
-        self.loop_lim = len(sample.WAV_DATA)
+        self.loop_lim = len(meow)
         self.audio = PWM(Pin(10, Pin.OUT))
         self.index = 0
         self.duty_cycle = 0
@@ -20,8 +22,8 @@ class PWM_Audio():
         pass
 
     def pwm_start(self):
-        self.audio.freq(40000)
-        self.timer.init(mode=Timer.PERIODIC, freq=4000, callback=self.pwm_interupt)
+        self.audio.freq(80000)
+        self.timer.init(mode=Timer.PERIODIC, freq=8000, callback=self.pwm_interupt)
 
     def pwm_stop(self):
         self.timer.deinit()
