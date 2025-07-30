@@ -7,7 +7,6 @@ import utime
 from screens import Screen
 
 machine.freq(270000000)
-#print(machine.freq())
 
 volume_encoder = Encoder(18, 17)
 selection_encoder = Encoder(26, 27)
@@ -68,6 +67,9 @@ while True:
                 screen.hlt_vol()
             elif(menu.get_option() == AlarmSettings.SNOOZE_TIME):
                 screen.hlt_snooze_time()
+    
+    elif(menu.get_screen() == Screens.FACE):
+        screen.face()
 
     elif(menu.get_screen() == Screens.RADIO_MENU):
         screen.radio_menu(

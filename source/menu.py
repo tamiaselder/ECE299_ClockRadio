@@ -21,6 +21,7 @@ class Screens:
     TIME_MENU = 1
     ALARM_MENU = 2
     RADIO_MENU = 3
+    FACE = 4
 
 
 class Menu():
@@ -40,7 +41,7 @@ class Menu():
         self._alarm_triggered = False
         self._alarm_set = 0
         self._alarm_tone = 0
-        self._alarm_vol = 0
+        self._alarm_vol = 1
         self._snooze_time = 5
 
         self._time_format_24 = 1
@@ -58,7 +59,7 @@ class Menu():
         self._snooze_on = 0
 
         self._vol_encoder.set_update_val(self._radio.GetSettings()[1], 0, 15)
-        self._selection_encoder.set_update_val(0, 0, 3)
+        self._selection_encoder.set_update_val(0, 0, 4)
 
         self._selection_button.irq(self._selection_button_callback, Pin.IRQ_RISING)
         self._reset_button.irq(self._reset_button_callback, Pin.IRQ_RISING)
@@ -109,6 +110,8 @@ class Menu():
                     self._radio.ProgramRadio()
                 elif(self._current_screen == Screens.STANDBY):
                     pass
+                elif(self._current_screen == Screens.FACE):
+                    pass
             
             elif(self._in_option and self._current_screen == Screens.TIME_MENU):
                 if(self._current_option == ClockSettings.TIME_HOUR):
@@ -140,7 +143,7 @@ class Menu():
     def _reset_button_timer_callback(self, pin):
         if(self._in_screen and not self._in_option):
             self._in_screen = False
-            self._selection_encoder.set_update_val(self._current_screen, 0, 2)
+            self._selection_encoder.set_update_val(self._current_screen, 0, 4)
             self._selection_encoder.set_update_increment(1)
 
     def _selection_button_callback(self,pin):
@@ -158,7 +161,7 @@ class Menu():
                 self._radio.UpdateSettings()
                 self._radio.ProgramRadio()
             self._selection_encoder.set_update_increment(1)
-            self._selection_encoder.set_update_val(self._current_screen, 0, 2)
+            self._selection_encoder.set_update_val(self._current_screen, 0, 4)
             self._alarm_set = 1
             self._audio.pwm_stop()
 
