@@ -44,6 +44,10 @@ class Screen():
             minute_str = "0" + str(minute)
         else: minute_str = str(minute)
 
+        if (alrm_min < 10):
+            alrm_minute_str = "0" + str(alrm_min)
+        else: alrm_minute_str = str(alrm_min)
+
         day_names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
         month_names = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
         day_str = day_names[day[3]-1] + " " + month_names[day[1]-1] + " " + str(day[2])
@@ -51,7 +55,7 @@ class Screen():
         radio_str = str(radio_st) + " Rock Music"
         
         alrm_state = ["Off","On "]
-        alrm_str = "Alarm " + alrm_state[alrm_set] + " " + str(alrm_hr) + ":" + str(alrm_min)
+        alrm_str = "Alarm " + alrm_state[alrm_set] + " " + str(alrm_hr) + ":" + alrm_minute_str
         
         #self.oled.contrast(250)
         self.oled.fill(0)
@@ -150,10 +154,10 @@ class Screen():
     def alarm(self, snooze):
         self.oled.fill(0)
         if (snooze == 1):
-            self.oled.rect(7, 24, 50, 11, 1)
+            self.oled.rect(3, 24, 50, 11, 1)
         else:
-            self.oled.rect(79, 24, 42, 11, 1)
+            self.oled.rect(75, 24, 50, 11, 1)
 
         self.oled.large_text("Alarm", 24, 2, 2)
-        self.oled.text("Snooze   Sleep", 8, 26, 1)
+        self.oled.text("Snooze   Cancel", 4, 26, 1)
         self.oled.show()

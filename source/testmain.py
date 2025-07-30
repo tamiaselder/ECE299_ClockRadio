@@ -5,11 +5,22 @@ from fm_radio import Radio
 from machine import Pin, Timer
 import utime
 from screens import Screen
+from pwm_audio import PWM_Audio
 
-screen = Screen()
-time = [1,3,45,3]
-alrm_snz = 0
-# while True: 
+radio = Radio(101.9, 1, False)
+audio = PWM_Audio()
+
+radio.SetMute(True)
+radio.ProgramRadio()
+audio.pwm_start()
+
+# screen = Screen()
+# time = [1,3,45,3]
+# alrm_snz = 0
+
+
+while True: 
+    pass
 #     # screen.standby(time, 1, [1,5,31,3],7,35,False, 101.3)
 #     # utime.sleep(10)
 #     # screen.time_menu(time,[1,5,31,3],1 , 10, 25, 0)

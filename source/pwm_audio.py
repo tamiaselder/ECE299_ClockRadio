@@ -2,6 +2,7 @@ from machine import Pin, Timer, freq, PWM
 import utime
 from fm_radio import Radio
 import sample
+import uasyncio as asyncio
 
 class PWM_Audio():
     def __init__(self):
@@ -12,28 +13,20 @@ class PWM_Audio():
         self.timer = Timer()
 
     def pwm_interupt(self, t):
-        self.audio.duty_u16(self.duty_cycle)
+        if (sample.WAV_DATA[self.index][0] > 10):
+            self.audio.freq(int(sample.WAV_DATA[self.index][0]))  
+        else:
+            self.audio.deinit()
+        self.timer.init(mode=Timer.ONE_SHOT, period = sample.WAV_DATA[self.index][1], callback=self.pwm_interupt)
         if(self.index >= self.loop_lim-1):
             self.index=0
         else: self.index += 1
-        self.duty_cycle = sample.WAV_DATA[self.index]*256
         pass
 
     def pwm_start(self):
-        self.audio.freq(88000)
-        self.timer.init(mode=Timer.PERIODIC, freq=11000, callback=self.pwm_interupt)
+        self.audio.duty_u16(1000)
+        self.timer.init(mode=Timer.ONE_SHOT, period = 1, callback=self.pwm_interupt)
 
     def pwm_stop(self):
         self.timer.deinit()
         self.audio.deinit()
-
-# radio = Radio(101.9, 1, True)
-
-# audio = PWM_Audio()
-
-# audio.pwm_start()
-# audio.pwm_stop()
-
-
-# while True:
-#     pass

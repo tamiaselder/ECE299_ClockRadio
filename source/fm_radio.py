@@ -31,27 +31,27 @@ class Radio:
 #
         self.Settings = bytearray( 8 )
 
-        self.radio_i2c = I2C( self.i2c_device, scl=self.i2c_scl, sda=self.i2c_sda, freq=400000)
+        self.radio_i2c = I2C( self.i2c_device, scl=self.i2c_scl, sda=self.i2c_sda, freq=300000)
         self.ProgramRadio()
 
     def SetVolume( self, NewVolume ):
 #
 # Conver t the string into a integer
 #
-        # try:
-        #     NewVolume = int( NewVolume )
+        try:
+            NewVolume = int( NewVolume )
             
-        # except:
-        #     return( False )
+        except:
+            return( False )
         
-#
+
 # Validate the type and range check the volume
-#
-        # if ( not isinstance( NewVolume, int )):
-        #     return( False )
+
+        if ( not isinstance( NewVolume, int )):
+            return( False )
         
-        # if (( NewVolume < 0 ) or ( NewVolume > 15 )):
-        #     return( False )
+        if (( NewVolume < 0 ) or ( NewVolume > 15 )):
+            return( False )
 
         self.Volume = NewVolume
         return( True )
@@ -81,11 +81,11 @@ class Radio:
         
     def SetMute( self, NewMute ):
         
-        # try:
-        #     self.Mute = bool( int( NewMute ))
+        try:
+            self.Mute = bool( int( NewMute ))
             
-        # except:
-        #     return( False )
+        except:
+            return( False )
         
         return( True )
 

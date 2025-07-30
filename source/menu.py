@@ -3,7 +3,6 @@ from rotary import Encoder
 from machine import RTC, Pin, Timer
 from pwm_audio import PWM_Audio
 
-
 class ClockSettings:
     TIME_HOUR = 0
     TIME_MIN = 1
@@ -71,11 +70,12 @@ class Menu():
             self._radio.ProgramRadio()
         
         time = self._rtc.datetime()[4:8]
-        if(self._alarm_time[0] == time[0] and self._alarm_time[1] == time[1] and time[2]  == 0 and self._alarm_set == 1):
-            self._alarm_triggered = True
+        if(self._alarm_time[0] == time[0] and self._alarm_time[1] == time[1] and time[2] == 0 and self._alarm_set == 1):
             self._radio.SetMute(True)
             self._radio.UpdateSettings()
             self._radio.ProgramRadio()
+            self._alarm_triggered = True
+            self._alarm_set = 0            
             self._selection_encoder.set_update_val(0, 0, 1)
             self._selection_encoder.set_update_increment(1)
             self._audio.pwm_start()
@@ -112,18 +112,18 @@ class Menu():
                 elif(self._current_option == ClockSettings.ALARM_HOUR):
                     self._alarm_time[0] = value
             
-            print("Current Station")
-            print(self.get_station())
-            print("Current Screen") 
-            print(self.get_screen())
-            print("Current Option") 
-            print(self.get_option())
-            print("Current Time")  
-            print(self.get_time())
-            print("Current Alarm Time") 
-            print(self.get_alarm_hour())
-            print(self.get_alarm_min())
-            print(value)
+            # print("Current Station")
+            # print(self.get_station())
+            # print("Current Screen") 
+            # print(self.get_screen())
+            # print("Current Option") 
+            # print(self.get_option())
+            # print("Current Time")  
+            # print(self.get_time())
+            # print("Current Alarm Time") 
+            # print(self.get_alarm_hour())
+            # print(self.get_alarm_min())
+            # print(value)
         
         self._previous_value = value
 
@@ -152,6 +152,7 @@ class Menu():
                 self._radio.ProgramRadio()
             self._selection_encoder.set_update_increment(1)
             self._selection_encoder.set_update_val(self._current_screen, 0, 2)
+            self._alarm_set = 1
             self._audio.pwm_stop()
 
         elif(not self._in_option and self._in_screen and self._current_screen == Screens.TIME_MENU):
@@ -186,7 +187,7 @@ class Menu():
                 self._selection_encoder.set_update_val(self._current_option, 0, 5)
                 self._selection_encoder.set_update_increment(1)
             elif(self._current_screen == Screens.RADIO_MENU):
-                self._selection_encoder.set_update_val(self.get_station(), 87, 108)
+                self._selection_encoder.set_update_val(self.get_station(), 88, 108)
                 self._selection_encoder.set_update_increment(0.1)
             elif(self._current_screen == Screens.STANDBY):
                 pass
@@ -278,3 +279,6 @@ class Menu():
     
     def alarm_triggered(self):
         return self._alarm_triggered
+
+    def get_snooze(self):
+        return self._snooze_on

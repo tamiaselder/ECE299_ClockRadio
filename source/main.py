@@ -2,12 +2,15 @@ from menu import Menu, Screens, ClockSettings
 from rotary import Encoder
 from ssd1306 import SSD1306_SPI
 from fm_radio import Radio
-from machine import Pin, Timer
+from machine import Pin, Timer, freq
 import utime
 from screens import Screen
 
+machine.freq(270000000)
+#print(machine.freq())
+
 volume_encoder = Encoder(18, 17)
-selection_encoder = Encoder(27, 26)
+selection_encoder = Encoder(26, 27)
 
 select_button = Pin(28, Pin.IN, Pin.PULL_UP)
 snooze_button = Pin(16, Pin.IN, Pin.PULL_UP)
