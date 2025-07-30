@@ -11,10 +11,16 @@ class ClockSettings:
     ALARM_MIN = 4
     ALARM_SET = 5
 
+class AlarmSettings:
+    ALARM_TONE = 0
+    ALARM_VOL = 1
+    SNOOZE_TIME = 2
+
 class Screens:
     STANDBY = 0
     TIME_MENU = 1
-    RADIO_MENU = 2
+    ALARM_MENU = 2
+    RADIO_MENU = 3
 
 
 class Menu():
@@ -33,6 +39,9 @@ class Menu():
         self._alarm_time = [12, 0]
         self._alarm_triggered = False
         self._alarm_set = 0
+        self._alarm_tone = 0
+        self._alarm_vol = 0
+        self._snooze_time = 5
 
         self._time_format_24 = 1
 
@@ -78,7 +87,8 @@ class Menu():
             self._alarm_set = 0            
             self._selection_encoder.set_update_val(0, 0, 1)
             self._selection_encoder.set_update_increment(1)
-            self._audio.pwm_start()
+            self._audio.reinit(self._alarm_tone)
+            self._audio.pwm_start(self._alarm_vol)
 
         value = self._selection_encoder.value()
         if(value != self._previous_value):
@@ -98,7 +108,7 @@ class Menu():
                 elif(self._current_screen == Screens.STANDBY):
                     pass
             
-            elif(self._in_option):
+            elif(self._in_option and self._current_screen == Screen.TIME_MENU):
                 if(self._current_option == ClockSettings.TIME_HOUR):
                     self.set_time_hour(value)
                 elif(self._current_option == ClockSettings.TIME_MIN):
@@ -112,18 +122,13 @@ class Menu():
                 elif(self._current_option == ClockSettings.ALARM_HOUR):
                     self._alarm_time[0] = value
             
-            # print("Current Station")
-            # print(self.get_station())
-            # print("Current Screen") 
-            # print(self.get_screen())
-            # print("Current Option") 
-            # print(self.get_option())
-            # print("Current Time")  
-            # print(self.get_time())
-            # print("Current Alarm Time") 
-            # print(self.get_alarm_hour())
-            # print(self.get_alarm_min())
-            # print(value)
+            elif(self._in_option and self._current_screen == Screen.ALARM_MENU):
+                if(self._current_option == AlarmSettings.ALARM_TONE):
+                    self._alarm_tone = value
+                elif(self._current_option == ClockSettings.ALARM_VOL):
+                    self._alarm_vol = value
+                elif(self._current_option == ClockSettings.SNOOZE_TIME):
+                    self._snoooze_time = value
         
         self._previous_value = value
 
@@ -142,7 +147,7 @@ class Menu():
     def _selection_button_timer_callback(self,pin):
         if(self._alarm_triggered == True):
             if self._snooze_on == 1 :
-                self._snooze_timer.init(mode=Timer.ONE_SHOT, period=300000, callback=self._snooze_timer_callback)
+                self._snooze_timer.init(mode=Timer.ONE_SHOT, period=self._snooze_time * 6000, callback=self._snooze_timer_callback)
             self._alarm_triggered = False
             self._in_screen = False
             self._in_option = False
@@ -176,15 +181,32 @@ class Menu():
                 self._selection_encoder.set_update_val(self._alarm_time[0], 0, 23)
                 self._selection_encoder.set_update_increment(1)
         
+        elif(not self._in_option and self._in_screen and self._current_screen == Screen.ALARM_MENU):
+                if(self._current_option == AlarmSettings.ALARM_TONE):
+                    self._selection_encoder.set_update_val(self._alarm_tone, 0, 2)
+                    self._selection_encoder.set_update_increment(1)
+                elif(self._current_option == ClockSettings.ALARM_VOL):
+                    self._selection_encoder.set_update_val(self._alarm_vol, 1, 20)
+                    self._selection_encoder.set_update_increment(1)
+                elif(self._current_option == ClockSettings.SNOOZE_TIME):
+                    self._selection_encoder.set_update_val(self._snooze_time, 1, 20)
+                    self._selection_encoder.set_update_increment(1)
+        
         elif(self._in_option):
             self._in_option = False
-            self._selection_encoder.set_update_val(self._current_option, 0, 5)
+            if(self._current_screen == Screens.TIME_MENU):
+                self._selection_encoder.set_update_val(self._current_option, 0, 5)
+            elif(self._current_screen == Screens.ALARM_MENU):
+                self._selection_encoder.set_update_val(self._current_option, 0, 2)
             self._selection_encoder.set_update_increment(1)
 
         elif(not self._in_screen):
             self._in_screen = True
             if(self._current_screen == Screens.TIME_MENU):
                 self._selection_encoder.set_update_val(self._current_option, 0, 5)
+                self._selection_encoder.set_update_increment(1)
+            elif(self._current_screen == Screens.ALARM_MENU):
+                self._selection_encoder.set_update_val(self._current_option, 0, 2)
                 self._selection_encoder.set_update_increment(1)
             elif(self._current_screen == Screens.RADIO_MENU):
                 self._selection_encoder.set_update_val(self.get_station(), 88, 108)
@@ -193,13 +215,14 @@ class Menu():
                 pass
 
     def _snooze_timer_callback(self, pin):
-        self._alarm_triggered = True
-        self._radio.SetMute(True)
-        self._radio.UpdateSettings()
-        self._radio.ProgramRadio()
-        self._selection_encoder.set_update_val(0, 0, 1)
-        self._selection_encoder.set_update_increment(1)
-        self._audio.pwm_start()
+        if(self._alarm_set == 1):
+            self._alarm_triggered = True
+            self._radio.SetMute(True)
+            self._radio.UpdateSettings()
+            self._radio.ProgramRadio()
+            self._selection_encoder.set_update_val(0, 0, 1)
+            self._selection_encoder.set_update_increment(1)
+            self._audio.pwm_start()
 
     def get_screen(self):
         return self._current_screen
@@ -282,3 +305,12 @@ class Menu():
 
     def get_snooze(self):
         return self._snooze_on
+
+    def get_snooze_time(self):
+        return self._snooze_time
+    
+    def get_alarm_tone(self):
+        return self._alarm_tone
+    
+    def get_alarm_vol(self):
+        return self._alarm_vol
