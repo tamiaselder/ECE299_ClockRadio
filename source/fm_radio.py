@@ -1,7 +1,4 @@
-from machine import Pin, I2C  #, Timer
-import time
-
-button = Pin(15, Pin.IN, Pin.PULL_DOWN)
+from machine import Pin, I2C 
 
 class Radio:
     
@@ -10,7 +7,7 @@ class Radio:
 #
 # set the initial values of the radio
 #
-        self.Volume = 2
+        self.Volume = 3
         self.Frequency = 88
         self.Mute = False
 #
@@ -19,18 +16,13 @@ class Radio:
         self.SetVolume( NewVolume )
         self.SetFrequency( NewFrequency )
         self.SetMute( NewMute )
-        
       
 # Initialize I/O pins associated with the radio's I2C interface
 
         self.i2c_sda = Pin(8)
         self.i2c_scl = Pin(9)
 
-#
-# I2C Device ID can be 0 or 1. It must match the wiring. 
-#
-# The radio is connected to device number 1 of the I2C device
-#
+
         self.i2c_device = 0
         self.i2c_device_address = 0x10
 
@@ -39,28 +31,27 @@ class Radio:
 #
         self.Settings = bytearray( 8 )
 
-
-        self.radio_i2c = I2C( self.i2c_device, scl=self.i2c_scl, sda=self.i2c_sda, freq=200000)
+        self.radio_i2c = I2C( self.i2c_device, scl=self.i2c_scl, sda=self.i2c_sda, freq=400000)
         self.ProgramRadio()
 
     def SetVolume( self, NewVolume ):
 #
 # Conver t the string into a integer
 #
-        try:
-            NewVolume = int( NewVolume )
+        # try:
+        #     NewVolume = int( NewVolume )
             
-        except:
-            return( False )
+        # except:
+        #     return( False )
         
 #
 # Validate the type and range check the volume
 #
-        if ( not isinstance( NewVolume, int )):
-            return( False )
+        # if ( not isinstance( NewVolume, int )):
+        #     return( False )
         
-        if (( NewVolume < 0 ) or ( NewVolume >= 16 )):
-            return( False )
+        # if (( NewVolume < 0 ) or ( NewVolume > 15 )):
+        #     return( False )
 
         self.Volume = NewVolume
         return( True )
@@ -90,11 +81,11 @@ class Radio:
         
     def SetMute( self, NewMute ):
         
-        try:
-            self.Mute = bool( int( NewMute ))
+        # try:
+        #     self.Mute = bool( int( NewMute ))
             
-        except:
-            return( False )
+        # except:
+        #     return( False )
         
         return( True )
 
@@ -117,6 +108,8 @@ class Radio:
 #
     def UpdateSettings( self ):
         
+        self.Settings = bytearray (8)
+        
         if ( self.Mute ):
             self.Settings[0] = 0x80
         else:
@@ -137,6 +130,7 @@ class Radio:
 
         self.UpdateSettings()
         self.radio_i2c.writeto( self.i2c_device_address, self.Settings )
+
 
 #
 # Extract the settings from the radio registers

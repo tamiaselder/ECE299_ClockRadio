@@ -95,7 +95,7 @@ class Screen():
         year = str(day[0])
 
         time_type = ["12h", "24h"]
-        alrm_state = ["Alarm is On", "Alarm is Off"]
+        alrm_state = ["Alarm is Off", "Alarm is On"]
 
         #display output
         self.oled.fill(0)
@@ -145,4 +145,15 @@ class Screen():
     def face(self):
         self.oled.fill(0)
         self.oled.large_text("oo", 0, 0, 8)
+        self.oled.show()
+
+    def alarm(self, snooze):
+        self.oled.fill(0)
+        if (snooze == 1):
+            self.oled.rect(7, 24, 50, 11, 1)
+        else:
+            self.oled.rect(79, 24, 42, 11, 1)
+
+        self.oled.large_text("Alarm", 24, 2, 2)
+        self.oled.text("Snooze   Sleep", 8, 26, 1)
         self.oled.show()
